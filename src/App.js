@@ -14,6 +14,7 @@ import ReferralLevel from './Refferal/Referral.js';
 import CustomerSupport from './Customer Support/Custormer_support.js';
 import Tutorial from './Tutorial/Tutorial.js';
 import MyRank from "./Summery/MyRank/MyRank.js";
+import CalendarPage from "./Summery/Mycalander/Mycalendar.js";
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
     <Route path="/CustomerSupport" element={<CustomerSupport />} />
     <Route path="/Tutorial" element={<Tutorial />} />
     <Route path="/MyRank" element={<MyRank />} />
-   
+    <Route path="/MyCalendar" element={<CalendarPage />} />
     
 
      </Routes>
