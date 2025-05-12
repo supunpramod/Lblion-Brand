@@ -9,6 +9,7 @@ import WalletDashboard from './My Wallet/MyWallet';
 import ProfileSettings from './Profile/Profile.js';
 import KycDashboard from './Profile/Kyc.js';
 import Deposit from './Investment/Deposit/Deposit.js';
+import PurchaseHistory from './Investment/Deposit/Purchase.js';
 function App() {
   return (
     <div>
@@ -23,6 +24,7 @@ function App() {
     <Route path="/ProfileSettings" element={<ProfileSettings />} />
     <Route path="/KycDashboard" element={<KycDashboard/>} />
     <Route path="/Deposit" element={<Deposit />} />
+    <Route path="/PurchaseHistory" element={<PurchaseHistory />} />
     
 
      </Routes>
