@@ -1,6 +1,6 @@
-import React from "react";
+
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from './Login';
 import Signup from './Signup';
 import Profile from './Profile/Profile';
@@ -13,6 +13,8 @@ import PurchaseHistory from './Investment/Deposit/Purchase.js';
 import ReferralLevel from './Refferal/Referral.js';
 import CustomerSupport from './Customer Support/Custormer_support.js';
 import Tutorial from './Tutorial/Tutorial.js';
+import MyRank from "./Summery/MyRank/MyRank.js";
+
 function App() {
   return (
     <div>
@@ -31,6 +33,8 @@ function App() {
     <Route path="/ReferralLevel" element={<ReferralLevel />} />
     <Route path="/CustomerSupport" element={<CustomerSupport />} />
     <Route path="/Tutorial" element={<Tutorial />} />
+    <Route path="/MyRank" element={<MyRank />} />
+   
     
 
      </Routes>

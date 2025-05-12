@@ -159,7 +159,7 @@ const Sidebar = () => {
               </button>
               {openMenu === 'income' && (
                 <ul className="submenu">
-                  <li><button className="nav-link">My Rank </button></li>
+                  <Link to= "/MyRank"><li><button className="nav-link">My Rank </button></li></Link>
                   <li><button className="nav-link">My Calendar</button></li>
                 </ul>
               )}
