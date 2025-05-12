@@ -123,7 +123,7 @@ const Sidebar = () => {
             <li>
               <button className="nav-link">
                 <FaUsers className="menu-icon" />
-                <span className="menu-text">Referral System</span>
+               <Link to="/ReferralLevel" ><span className="menu-text">Referral System</span></Link>
               </button>
             </li>
             <li>
