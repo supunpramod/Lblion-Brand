@@ -1,46 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './deposit.css';
+import { Link } from 'react-router-dom';
+import { FaSun, FaMoon, FaThLarge, FaLanguage, FaBell, FaUserCircle } from 'react-icons/fa';
+import Sidebar from '../../Compornent/Sidebar/Sidebar.js';
 
-const InvestmentForm = () => {
+
+
+const Deposit = () => {
   const [amount, setAmount] = useState(30);
+  const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
   const gasFeePercent = 3;
 
   const gasFee = (amount * gasFeePercent) / 100;
   const total = amount + gasFee;
 
+  // Set dark mode on initial load
+  useEffect(() => {
+    document.body.classList.add('dark-mode');
+  }, []);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    document.body.classList.toggle('dark-mode');
+  };
+
   return (
-    <div className="investment-dashboard">
-      <div className="sidebar">
-        <h2 className="brand">Lblion Brand</h2>
-        <ul className="menu">
-          <li>Dashboard</li>
-          <li>
-            Profile
-          </li>
-          <li className="expandable active">
-            Investment
-            <ul className="submenu">
-              <li className="highlighted">Deposit</li>
-              <li>My Asset Details</li>
-              <li>Purchase History</li>
-            </ul>
-          </li>
-          <li>Withdraw Asset</li>
-          <li>My Wallet</li>
-          <li>Referral System</li>
-        </ul>
-      </div>
-
-      <div className="main-content">
-        <header className="topbar">
-          <nav>
-            <span>Dashboard</span>
-            <span>Wallet</span>
-            <span>Transaction</span>
-            <span>Support Ticket</span>
-          </nav>
-        </header>
-
+    <div className={`dashboard-container ${isDarkMode ? 'dark-mode' : ''}`}>
+     <Sidebar />
+      
+      <main className="main-content">
+        <div className="top-navigation">
+          <div className="nav-tabs">
+            <Link to="/Dashboard"><button className="nav-tab">Dashboard</button></Link>
+            <Link to="/WalletDashboard"><button className="nav-tab">Wallet</button></Link>
+            <button className="nav-tab">Transaction</button>
+            <button className="nav-tab">Support Ticket</button>
+          </div>
+          
+          <div className="action-buttons">
+            <button className="icon-button" onClick={toggleTheme}>
+              {isDarkMode ? <FaSun /> : <FaMoon />}
+            </button>
+            <button className="icon-button"><FaThLarge /></button>
+            <button className="icon-button"><FaLanguage /></button>
+            <button className="icon-button"><FaBell /></button>
+            <button className="icon-button user-icon"><FaUserCircle /></button>
+          </div>
+        </div>
+        
         <div className="investment-section">
           <h3>Investment Packages</h3>
           <p className="breadcrumbs">Home &gt; Dashboard &gt; Investment Package</p>
@@ -74,9 +81,9 @@ const InvestmentForm = () => {
             </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 };
 
-export default InvestmentForm;
+export default Deposit;

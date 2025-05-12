@@ -4,7 +4,7 @@ import { FaHome, FaUser, FaChartLine, FaExchangeAlt, FaWallet, FaUsers, FaFileIn
 import logo from './lb-logo.avif';
 import dapulogo from './dapu-logo.jpg'; // ඔබගේ "LB" ලාංඡනය මෙහි path එකට දමන්න
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect } from 'react';    
 
 
 // PopUp Component එක
@@ -93,7 +93,7 @@ const Sidebar = () => {
               </button>
               {openMenu === 'investment' && (
                 <ul className="submenu">
-                  <li><button className="nav-link">Deposit</button></li>
+                  <li><Link to="/Deposit" ><button className="nav-link">Deposit</button></Link></li>
                   <li><button className="nav-link">My Asset Details</button></li>
                   <li><button className="nav-link">Purchase History</button></li>
                 </ul>
