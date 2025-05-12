@@ -117,7 +117,7 @@ const Sidebar = () => {
             <li>
               <button className="nav-link">
                 <FaWallet className="menu-icon" />
-                <span className="menu-text">My Wallet</span>
+                <span className="menu-text"><Link to="/WallertDashboard">My Wallet</Link></span>
               </button>
             </li>
             <li>
