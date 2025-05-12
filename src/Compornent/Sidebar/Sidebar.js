@@ -3,6 +3,7 @@ import './sidebar.css';
 import { FaHome, FaUser, FaChartLine, FaExchangeAlt, FaWallet, FaUsers, FaFileInvoiceDollar, FaHeadset, FaGraduationCap, FaHeart, FaCalendarAlt, FaEnvelope, FaQuestionCircle } from 'react-icons/fa';
 import logo from './lb-logo.avif';
 import dapulogo from './dapu-logo.jpg'; // ඔබගේ "LB" ලාංඡනය මෙහි path එකට දමන්න
+import { Link } from 'react-router-dom';
 
 
 // PopUp Component එක
@@ -76,7 +77,7 @@ const Sidebar = () => {
               </button>
               {openMenu === 'profile' && (
                 <ul className="submenu">
-                  <li><button className="nav-link">Personal Details</button></li>
+                  <li><Link to="/ProfileSettings"><button className="nav-link">Personal Details</button></Link></li>
                   <li><button className="nav-link">KYC</button></li>
                 </ul>
               )}

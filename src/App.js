@@ -6,6 +6,7 @@ import Signup from './Signup';
 import Profile from './Profile/Profile';
 import Dashboard from './UserDashboad/Dashboard';
 import WalletDashboard from './My Wallet/MyWallet';
+import ProfileSettings from './Profile/Profile.js';
 function App() {
   return (
     <div>
@@ -17,6 +18,8 @@ function App() {
      <Route path="/Profile" element={<Profile />} />
     <Route path="/Dashboard" element={<Dashboard />} />
     <Route path="/WallertDashboard" element={<WalletDashboard/>} />
+    <Route path="/ProfileSettings" element={<ProfileSettings />} />
+    
 
      </Routes>
       </Router> 

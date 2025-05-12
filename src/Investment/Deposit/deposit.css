@@ -126,9 +126,10 @@ body {
   
   .info-card {
     background: #6a72e0;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 15px;
     text-align: center;
     width: 180px;
+    margin: 2rem;
   }
   
