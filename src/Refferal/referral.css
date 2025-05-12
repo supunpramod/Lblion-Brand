@@ -1,0 +1,76 @@
+.referral-container {
+    background-color: #0b0d21;
+    color: white;
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: sans-serif;
+  }
+  
+  .page-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .filter-box {
+    background-color: #2e3448;
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-select {
+    background-color: #4a4e5c;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    color: white;
+  }
+  
+  .search-button {
+    background-color: #10152d;
+    border: 1px solid #ffffff33;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .table-controls {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .table-btn {
+    background-color: #101437;
+    color: white;
+    border: 1px solid #ffffff33;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .referral-table {
+    background-color: #101437;
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  
+  .table-header {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    font-weight: bold;
+    padding: 0.75rem;
+    border-bottom: 1px solid #333;
+  }
+  
+  .table-body {
+    padding: 1rem;
+    text-align: center;
+    color: #aaa;
+  }
+  

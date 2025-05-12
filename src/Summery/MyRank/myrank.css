@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #020818;
+  }
+  
+  .rank-container {
+    padding: 30px;
+    background-color: #ecf0fc;
+    color: white;
+  }
+  
+  .rank-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #020818;
+  }
+  
+  .rank-card {
+    background-color: #311c1c;
+    border: 1px solid #e87527;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .locked-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ff6c1a;
+    padding: 5px 12px;
+    border-bottom-right-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .rank-card h3 {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #fff;
+  }
+  
+  .requirement {
+    background-color: #5d3d31;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 10px;
+    color: #ffb577;
+    font-weight: 500;
+  }
+  
+  .benefits-section {
+    background-color: #472e2e;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .benefit-tag {
+    background-color: #3f4d2d;
+    color: #a4f273;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  
+  .rank-icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 40px;
+    color: #ff9933;
+    opacity: 0.3;
+  }
+  

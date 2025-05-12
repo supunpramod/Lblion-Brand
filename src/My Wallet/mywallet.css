@@ -1,0 +1,130 @@
+.wallet {
+    /*background-color: #0c1322;*/
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  
+  .wallet-page {
+    padding: 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  .wallet-header {
+    background-color: #cceeff;
+    color: #003366;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    position: relative;
+  }
+  
+  .wallet-header h2 {
+    margin-top: 0;
+  }
+  
+  .toggle-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 30px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+  }
+  
+  .toggle-circle {
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border-radius: 50%;
+  }
+  
+  .wallet-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .wallet-card {
+    background-color: #111c3a;
+    border-radius: 15px;
+    padding: 20px;
+    flex: 1 1 200px;
+    text-align: center;
+    height: auto;
+  }
+  
+  .wallet-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .wallet-card .balance {
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  .wallet-card .label {
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  .wallet-card-card {
+    background-color: #111c3a;
+    border-radius: 15px;
+    padding: 20px;
+    flex: 1 1 100px;
+    text-align: center;
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  
+  .info-card {
+    background-color: #1c243b;
+    padding: 15px;
+    border-radius: 12px;
+    flex: 1 1 150px;
+    height: 80px;
+    color: #00cc99;
+    text-align: center;
+  }
+  
+  .info-card p {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .info-card span {
+    font-size: 12px;
+    color: #ccc;
+  }
+  
+  .chart-container {
+    
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    margin:30px 30%;
+    width: 400px;
+   
+  }
+  
+  .chart-container h3 {
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+  }
+  

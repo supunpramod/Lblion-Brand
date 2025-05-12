@@ -1,0 +1,95 @@
+.content {
+    background-color: #0c1322;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+  }
+  
+  .purchase-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .filters input,
+  .filters select {
+    padding: 10px;
+    background-color: #1a1f33;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 5px;
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .search-btn {
+    background-color: #1e90ff;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .actions button,
+  .actions select {
+    padding: 8px 12px;
+    background-color: #444;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+    background-color: #1a1f33;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ccc;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+  }
+  
+  thead {
+    background-color: #232b46;
+  }
+  
+  .empty-row {
+    text-align: center;
+    color: #777;
+  }
+  
+  .total {
+    text-align: right;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  

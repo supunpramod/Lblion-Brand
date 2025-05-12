@@ -1,0 +1,85 @@
+/* LoginPage.css */
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+  }
+  
+  .login-box {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+  }
+  
+  .login-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6b46c1; /* purple-700 */
+    margin-bottom: 0.25rem;
+  }
+  
+  .login-subtitle {
+    color: #6b7280; /* gray-500 */
+    margin-bottom: 1rem;
+  }
+  
+  .logo {
+    height: 64px;
+    margin: 0 auto 1rem auto;
+  }
+  
+  .brand-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+  
+  .brand-slogan {
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 0.5rem;
+    background: linear-gradient(to right, #ec4899, #facc15); /* pink to yellow */
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .login-button:hover {
+    opacity: 0.9;
+  }
+  
+  .login-footer {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 1rem;
+  }
+  
+  .login-footer a {
+    color: #6d28d9;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  
