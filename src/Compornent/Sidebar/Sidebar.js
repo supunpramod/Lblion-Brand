@@ -150,7 +150,7 @@ const Sidebar = () => {
             <li>
               <button className="nav-link">
                 <FaGraduationCap className="menu-icon" />
-                <span className="menu-text">Tutorials</span>
+                <Link to="/Tutorial"><span className="menu-text">Tutorials</span></Link>
               </button>
             </li>
           </ul>

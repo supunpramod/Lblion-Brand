@@ -12,6 +12,7 @@ import Deposit from './Investment/Deposit/Deposit.js';
 import PurchaseHistory from './Investment/Deposit/Purchase.js';
 import ReferralLevel from './Refferal/Referral.js';
 import CustomerSupport from './Customer Support/Custormer_support.js';
+import Tutorial from './Tutorial/Tutorial.js';
 function App() {
   return (
     <div>
@@ -29,6 +30,7 @@ function App() {
     <Route path="/PurchaseHistory" element={<PurchaseHistory />} />
     <Route path="/ReferralLevel" element={<ReferralLevel />} />
     <Route path="/CustomerSupport" element={<CustomerSupport />} />
+    <Route path="/Tutorial" element={<Tutorial />} />
     
 
      </Routes>
