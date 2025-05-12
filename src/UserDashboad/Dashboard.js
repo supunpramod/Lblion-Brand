@@ -33,7 +33,7 @@ const Dashboard = () => {
             <Link to="/Dashboard"><button className="nav-tab active">Dashboard</button></Link>
             <Link to="/WallertDashboard"> <button className="nav-tab">Wallet</button>  </Link> 
             <button className="nav-tab">Transaction</button>
-            <button className="nav-tab">Support Ticket</button>
+          <Link to="/CustomerSupport"> <button className="nav-tab">Support Ticket</button></Link> 
           </div>
           
           <div className="action-buttons">

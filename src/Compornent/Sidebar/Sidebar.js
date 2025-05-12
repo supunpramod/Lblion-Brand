@@ -144,7 +144,7 @@ const Sidebar = () => {
             <li>
               <button className="nav-link">
                 <FaHeadset className="menu-icon" />
-                <span className="menu-text">Customer Support</span>
+                <Link to="/CustomerSupport"><span className="menu-text">Customer Support</span></Link>
               </button>
             </li>
             <li>

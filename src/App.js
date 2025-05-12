@@ -11,6 +11,7 @@ import KycDashboard from './Profile/Kyc.js';
 import Deposit from './Investment/Deposit/Deposit.js';
 import PurchaseHistory from './Investment/Deposit/Purchase.js';
 import ReferralLevel from './Refferal/Referral.js';
+import CustomerSupport from './Customer Support/Custormer_support.js';
 function App() {
   return (
     <div>
@@ -27,6 +28,7 @@ function App() {
     <Route path="/Deposit" element={<Deposit />} />
     <Route path="/PurchaseHistory" element={<PurchaseHistory />} />
     <Route path="/ReferralLevel" element={<ReferralLevel />} />
+    <Route path="/CustomerSupport" element={<CustomerSupport />} />
     
 
      </Routes>
