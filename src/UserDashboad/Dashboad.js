@@ -3,6 +3,7 @@ import './dashboad.css'; // Fixed spelling of dashboard
 import Sidebar from '../Compornent/Sidebar/Sidebar.js';
 import { FaMoon, FaSun, FaThLarge, FaLanguage, FaBell, FaUserCircle, FaLongArrowAltUp, FaCopy } from 'react-icons/fa';
 import { RiSendPlaneFill } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
@@ -23,14 +24,14 @@ const Dashboard = () => {
   };
 
   return (
-    <div className={`dashboard-container ${isDarkMode ? 'dark-mode' : ''}`}>
+    <div className={`dashboad-container ${isDarkMode ? 'dark-mode' : ''}`}>
       <Sidebar />
       
       <main className="main-content">
         <div className="top-navigation">
           <div className="nav-tabs">
-            <button className="nav-tab active">Dashboard</button>
-            <button className="nav-tab">Wallet</button>
+            <Link to="/Dashboad"><button className="nav-tab active">Dashboad</button></Link>
+            <Link to="/WallertDashboard"> <button className="nav-tab">Wallet</button>  </Link> 
             <button className="nav-tab">Transaction</button>
             <button className="nav-tab">Support Ticket</button>
           </div>
