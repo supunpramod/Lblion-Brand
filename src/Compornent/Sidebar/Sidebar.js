@@ -141,6 +141,32 @@ const Sidebar = () => {
                 </ul>
               )}
             </li>
+
+
+
+
+
+
+
+
+            <li>
+              <button 
+                className="nav-link dropdown-toggle" 
+                onClick={() => toggleSubmenu('income')}
+              >
+                <FaFileInvoiceDollar className="menu-icon" />
+                <span className="menu-text">Summary</span>
+              </button>
+              {openMenu === 'income' && (
+                <ul className="submenu">
+                  <li><button className="nav-link">My Rank </button></li>
+                  <li><button className="nav-link">My Calendar</button></li>
+                </ul>
+              )}
+            </li>
+
+
+
             <li>
               <button className="nav-link">
                 <FaHeadset className="menu-icon" />
@@ -151,6 +177,12 @@ const Sidebar = () => {
               <button className="nav-link">
                 <FaGraduationCap className="menu-icon" />
                 <Link to="/Tutorial"><span className="menu-text">Tutorials</span></Link>
+              </button>
+            </li>
+            <li>
+              <button className="nav-link">
+                <FaGraduationCap className="menu-icon" />
+                <Link to="/Profile"><span className="menu-text">Settings</span></Link>
               </button>
             </li>
           </ul>
