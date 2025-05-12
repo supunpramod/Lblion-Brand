@@ -7,6 +7,7 @@ import Profile from './Profile/Profile';
 import Dashboard from './UserDashboad/Dashboard';
 import WalletDashboard from './My Wallet/MyWallet';
 import ProfileSettings from './Profile/Profile.js';
+import KycDashboard from './Profile/Kyc.js';
 function App() {
   return (
     <div>
@@ -19,6 +20,7 @@ function App() {
     <Route path="/Dashboard" element={<Dashboard />} />
     <Route path="/WallertDashboard" element={<WalletDashboard/>} />
     <Route path="/ProfileSettings" element={<ProfileSettings />} />
+    <Route path="/KycDashboard" element={<KycDashboard/>} />
     
 
      </Routes>

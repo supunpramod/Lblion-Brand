@@ -4,6 +4,7 @@ import { FaHome, FaUser, FaChartLine, FaExchangeAlt, FaWallet, FaUsers, FaFileIn
 import logo from './lb-logo.avif';
 import dapulogo from './dapu-logo.jpg'; // ඔබගේ "LB" ලාංඡනය මෙහි path එකට දමන්න
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 
 // PopUp Component එක
@@ -78,7 +79,7 @@ const Sidebar = () => {
               {openMenu === 'profile' && (
                 <ul className="submenu">
                   <li><Link to="/ProfileSettings"><button className="nav-link">Personal Details</button></Link></li>
-                  <li><button className="nav-link">KYC</button></li>
+                  <li><Link to="/KycDashboard"><button className="nav-link">KYC</button></Link></li>
                 </ul>
               )}
             </li>

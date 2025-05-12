@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Login from './Login';
 import Signup from './Signup';
 import DashboardPage from './UserDashboad/Dashboard';
-import Kyc from './Profile/Kyc/Kyc';
+import Kyc from './Profile/Kyc';
 import Deposit from './Investment/Deposit/Deposit';
 import Purchase from'./Investment/Deposit/Purchshistory/Purchase';
 import MyWallert from './My Wallet/MyWallet';
