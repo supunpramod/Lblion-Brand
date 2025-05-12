@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Login from './Login';
 import Signup from './Signup';
-import DashboardPage from './UserDashboad/Dashboad';
+import DashboardPage from './UserDashboad/Dashboard';
 import Kyc from './Profile/Kyc/Kyc';
 import Deposit from './Investment/Deposit/Deposit';
 import Purchase from'./Investment/Deposit/Purchshistory/Purchase';
@@ -16,7 +16,7 @@ import Mycalander from './Summery/Mycalander/Mycalander';
 import Customer_support from './Customer Support/Custormer_support';
 import Tutorial from './Tutorial/Tutorial';
 import Sidebar from './Compornent/Sidebar/Sidebar';
-import Dashboard from './UserDashboad/Dashboad';  
+import Dashboard from './UserDashboad/Dashboard';  
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

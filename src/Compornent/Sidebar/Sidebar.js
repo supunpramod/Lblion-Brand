@@ -63,7 +63,7 @@ const Sidebar = () => {
             <li>
               <button className="nav-link active">
                 <FaHome className="menu-icon" />
-                <span className="menu-text">Dashboad</span>
+                <span className="menu-text">Dashboard</span>
               </button>
             </li>
             <li>

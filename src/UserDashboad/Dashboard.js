@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './dashboad.css'; // Fixed spelling of dashboard
+import './dashboard.css'; // Fixed spelling of dashboard
 import Sidebar from '../Compornent/Sidebar/Sidebar.js';
 import { FaMoon, FaSun, FaThLarge, FaLanguage, FaBell, FaUserCircle, FaLongArrowAltUp, FaCopy } from 'react-icons/fa';
 import { RiSendPlaneFill } from 'react-icons/ri';
@@ -30,7 +30,7 @@ const Dashboard = () => {
       <main className="main-content">
         <div className="top-navigation">
           <div className="nav-tabs">
-            <Link to="/Dashboad"><button className="nav-tab active">Dashboad</button></Link>
+            <Link to="/Dashboard"><button className="nav-tab active">Dashboard</button></Link>
             <Link to="/WallertDashboard"> <button className="nav-tab">Wallet</button>  </Link> 
             <button className="nav-tab">Transaction</button>
             <button className="nav-tab">Support Ticket</button>
