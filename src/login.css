@@ -22,9 +22,9 @@
   background: white; /* Semi-transparent background */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-  z-index: 2;
+  z-index: 1;
   overflow: hidden;
-  opacity: 0.93; /* Slightly transparent for depth */
+  opacity: 0.98; /* Slightly transparent for depth */
    /* Contain video within the box */
 }
 
@@ -37,7 +37,7 @@
   height: 100%;
   object-fit: cover;
   
-  opacity: 0.9; /* Reduced opacity for subtle effect */
+  opacity: 0.19; /* Reduced opacity for subtle effect */
   filter: blur(3px); /* Blur effect for better text readability */
 }
 
