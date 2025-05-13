@@ -3,6 +3,7 @@ import './login.css';
 import logo from './bl_logo.png';
 import { Link } from 'react-router-dom';
 import backgroundVideo from './background_video.mp4'; // ඔයාගේ video file එක import කරන්න
+import backgroundVideo2 from './background_video2.mp4'; // ඔයාගේ video file එක import කරන්න
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -42,9 +43,30 @@ export default function LoginPage() {
 
   return (
     <div className="login-container">
+  <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  style={{
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
+    objectFit: 'cover',
+    
+    background: '#000',
+    opacity: '30%',
+  }}
+>
+  <source src={backgroundVideo2} type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
       <div className="login-box">
         {/* Login Box එක ඇතුළේ Background Video එක */}
-        <video
+        {/* <video
           autoPlay
           loop
           muted
@@ -52,7 +74,7 @@ export default function LoginPage() {
         >
           <source src={backgroundVideo} type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </video> */}
 
         <h2 className="login-title">Welcome</h2>
         <p className="login-subtitle">Sign in to your account</p>
