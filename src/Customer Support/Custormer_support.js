@@ -25,7 +25,7 @@ const SupportTickets = () => {
         <div className="top-navigation">
           <div className="nav-tabs">
             <Link to="/Dashboard"><button className="nav-tab">Dashboard</button></Link>
-            <Link to="/WalletDashboard"><button className="nav-tab">Wallet</button></Link>
+            <Link to="/WallertDashboard"><button className="nav-tab">Wallet</button></Link>
             <button className="nav-tab">Transaction</button>
             <button className="nav-tab active">Support Ticket</button>
           </div>
