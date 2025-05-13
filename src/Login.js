@@ -57,7 +57,7 @@ export default function LoginPage() {
     objectFit: 'cover',
     
     background: '#000',
-    opacity: '30%',
+    opacity: '100%',
   }}
 >
   <source src={backgroundVideo2} type="video/mp4" />
@@ -66,7 +66,7 @@ export default function LoginPage() {
 
       <div className="login-box">
         {/* Login Box එක ඇතුළේ Background Video එක */}
-        {/* <video
+        <video
           autoPlay
           loop
           muted
@@ -74,7 +74,7 @@ export default function LoginPage() {
         >
           <source src={backgroundVideo} type="video/mp4" />
           Your browser does not support the video tag.
-        </video> */}
+        </video>
 
         <h2 className="login-title">Welcome</h2>
         <p className="login-subtitle">Sign in to your account</p>
