@@ -1,85 +1,164 @@
 /* LoginPage.css */
 
+/* Main container for the login page */
 .login-container {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-  }
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Fallback background */
+  overflow: hidden;
+}
+
+/* Login box styling with semi-transparent background and shadow */
+.login-box {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 2;
+  overflow: hidden; /* Contain video within the box */
+}
+
+/* Background video for the login box */
+.login-box-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.3; /* Reduced opacity for subtle effect */
+  filter: blur(3px); /* Blur effect for better text readability */
+}
+
+/* Typography for login title */
+.login-title {
+  font-size: 1.75rem; /* 28px */
+  font-weight: bold;
+  color: #6b46c1; /* Purple shade */
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 3;
+}
+
+/* Typography for login subtitle */
+.login-subtitle {
+  font-size: 1rem; /* 16px */
+  color: #6b7280; /* Gray shade */
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 3;
+}
+
+/* Logo styling */
+.logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 0.75rem auto;
+  position: relative;
+  z-index: 3;
+}
+
+/* Brand name styling */
+.brand-name {
+  font-size: 1.5rem; /* 24px */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.25rem;
+  position: relative;
+  z-index: 3;
+}
+
+/* Brand slogan styling */
+.brand-slogan {
+  font-size: 0.875rem; /* 14px */
+  color: #777;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 3;
+}
+
+/* Form input styling */
+.login-form input {
+  width: 80%;
+  padding: 0.625rem ;
   
+  margin-bottom: 0.9375rem; /* 15px */
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 0.3125rem; /* 5px */
+  font-size: 1rem; /* 16px */
+  background: rgba(255, 255, 255, 0.8); /* Slightly transparent */
+  position: relative;
+  z-index: 3;
+}
+
+/* Login button styling */
+.login-button {
+  width: 40%;
+  padding: 0.625rem; /* 10px */
+  background: linear-gradient(to right, #ec4899, #facc15); /* Pink to yellow gradient */
+  color: white;
+  border: none;
+  border-radius: 0.3125rem; /* 5px */
+  font-size: 1rem; /* 16px */
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  position: relative;
+  z-index: 3;
+}
+
+.login-button:hover {
+  opacity: 0.9; /* Subtle hover effect */
+}
+
+/* Message styling */
+.login-message {
+  margin-top: 1.25rem; /* 20px */
+  color: #333;
+  position: relative;
+  z-index: 3;
+}
+
+/* Footer styling */
+.login-footer {
+  margin-top: 1.25rem; /* 20px */
+  font-size: 0.875rem; /* 14px */
+  color: #6b7280; /* Gray shade */
+  position: relative;
+  z-index: 3;
+}
+
+.login-footer a {
+  color: #6d28d9; /* Purple shade */
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
   .login-box {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 320px;
-    text-align: center;
+    width: 90%; /* Adjust width for smaller screens */
+    padding: 1.5rem;
   }
-  
+
   .login-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #6b46c1; /* purple-700 */
-    margin-bottom: 0.25rem;
+    font-size: 1.5rem; /* Slightly smaller on mobile */
   }
-  
-  .login-subtitle {
-    color: #6b7280; /* gray-500 */
-    margin-bottom: 1rem;
-  }
-  
-  .logo {
-    height: 64px;
-    margin: 0 auto 1rem auto;
-  }
-  
+
   .brand-name {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
   }
-  
-  .brand-slogan {
-    font-size: 0.9rem;
-    color: #4b5563;
-    margin-bottom: 1.5rem;
-  }
-  
-  .login-form input {
-    width: 100%;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #d1d5db;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-  }
-  
-  .login-button {
-    width: 100%;
-    padding: 0.5rem;
-    background: linear-gradient(to right, #ec4899, #facc15); /* pink to yellow */
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .login-button:hover {
-    opacity: 0.9;
-  }
-  
-  .login-footer {
-    font-size: 0.85rem;
-    color: #6b7280;
-    margin-top: 1rem;
-  }
-  
-  .login-footer a {
-    color: #6d28d9;
-    font-weight: 600;
-    text-decoration: underline;
-  }
-  
+}
