@@ -4,17 +4,22 @@
     justify-content: center;
     align-items: center;
     padding: 40px 16px;
-    background-color: #ffffff;
+    background-color:transparent;
     min-height: 100vh;
+    overflow: hidden;
+    
   }
   
   .register-form {
     max-width: 800px;
     width: 100%;
-    background: #ffffff;
+    background:white;
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      overflow: hidden;
+  opacity: 95%; 
   }
   
   .logo-section {

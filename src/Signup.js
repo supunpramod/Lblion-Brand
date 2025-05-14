@@ -4,6 +4,8 @@ import { Link, useNavigate} from 'react-router-dom';
 import emailjs from 'emailjs-com';
 import logo from './bl_logo.png';
 
+import backgroundVideo2 from './background_video2.mp4'; // Your video file
+
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -122,6 +124,29 @@ export default function RegisterPage() {
 
   return (
     <div className="register-container">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          objectFit: 'cover',
+          
+          background: '#000',
+          opacity: '100%',
+        }}
+      >
+        <source src={backgroundVideo2} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+
+
       {!isVerifying ? (
         <form className="register-form" onSubmit={handleSubmit}>
           <div className="logo-section">

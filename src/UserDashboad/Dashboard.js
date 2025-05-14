@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import './dashboard.css'; // Fixed spelling of dashboard
+import './dashboard.css';
 import Sidebar from '../Compornent/Sidebar/Sidebar.js';
 import { FaMoon, FaSun, FaThLarge, FaLanguage, FaBell, FaUserCircle, FaLongArrowAltUp, FaCopy } from 'react-icons/fa';
 import { RiSendPlaneFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 
+
+
+
+
+
+
+
 const Dashboard = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [isTradeEnabled, setIsTradeEnabled] = useState(false);
 
-  // Set dark mode on initial load
   useEffect(() => {
     document.body.classList.add('dark-mode');
   }, []);
@@ -25,17 +31,29 @@ const Dashboard = () => {
 
   return (
     <div className={`dashboad-container ${isDarkMode ? 'dark-mode' : ''}`}>
+      {/* 2. Background Video & Overlay */}
+      {/* <div className="video-background">
+        <video
+          src={backgroundVideo2}
+          type="video/mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="bg-video"
+        />
+        <div className="overlay"></div>
+      </div> */}
+
       <Sidebar />
-      
       <main className="main-content">
         <div className="top-navigation">
           <div className="nav-tabs">
             <Link to="/Dashboard"><button className="nav-tab active">Dashboard</button></Link>
-            <Link to="/WallertDashboard"> <button className="nav-tab">Wallet</button>  </Link> 
+            <Link to="/WallertDashboard"> <button className="nav-tab">Wallet</button>  </Link>
             <button className="nav-tab">Transaction</button>
-          <Link to="/CustomerSupport"> <button className="nav-tab">Support Ticket</button></Link> 
+            <Link to="/CustomerSupport"> <button className="nav-tab">Support Ticket</button></Link>
           </div>
-          
           <div className="action-buttons">
             <button className="icon-button" onClick={toggleTheme}>
               {isDarkMode ? <FaSun /> : <FaMoon />}
@@ -46,7 +64,7 @@ const Dashboard = () => {
             <button className="icon-button user-icon"><FaUserCircle /></button>
           </div>
         </div>
-        
+
         <div className="trade-settings-card">
           <div className="trade-settings-content">
             <h2>Daily Trade Income Settings</h2>
@@ -58,13 +76,12 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="user-greeting-section">
           <div className="greeting-text">
             <h3>Good Evening,</h3>
             <h2>Chamod Mahiru</h2>
           </div>
-          
           <div className="stats-cards">
             <div className="stat-card">
               <span className="stat-title">My Investment</span>
@@ -80,38 +97,32 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="main-dashboard-content">
           <div className="wallet-card">
             <h3>Your Main Wallet</h3>
             <div className="wallet-amount">$0.00</div>
             <div className="wallet-caption">current balance</div>
           </div>
-          
           <div className="summary-container">
             <h3>Summary</h3>
-            
             <div className="summary-card">
               <div className="summary-title">Total Investment Profit</div>
               <div className="summary-amount">$ 0.00</div>
             </div>
-            
             <div className="summary-card">
               <div className="summary-title">Package Earning Total Payout</div>
               <div className="summary-amount">$ 0.00</div>
             </div>
-            
             <div className="summary-card">
               <div className="summary-title">Package Earning & Commission Total Payout</div>
               <div className="summary-amount">$ 0.00</div>
             </div>
           </div>
-          
           <div className="personal-details-card">
             <h3>Personal Details Summary</h3>
             <div className="user-id">CWC4</div>
             <div className="referral-text">Referral Username</div>
-            
             <div className="details-row">
               <div className="detail-col">
                 <div className="detail-value">0</div>
@@ -122,7 +133,6 @@ const Dashboard = () => {
                 <div className="detail-label">Inactive Direct Sales</div>
               </div>
             </div>
-            
             <div className="details-row">
               <div className="detail-col">
                 <div className="detail-value">2025-05-10</div>
@@ -133,20 +143,18 @@ const Dashboard = () => {
                 <div className="detail-label">Active Date</div>
               </div>
             </div>
-            
             <div className="status-tags">
               <span className="status-tag not-verified">Not Verified</span>
               <span className="status-tag inactive">InActive</span>
             </div>
           </div>
         </div>
-        
+
         <div className="crypto-price-ticker">
           <div className="ticker-label">
             <div>Updates:</div>
             <div className="live-label">Today Live</div>
           </div>
-          
           <div className="crypto-items">
             <div className="crypto-item">
               <div className="crypto-price">$103544.00</div>
@@ -157,7 +165,6 @@ const Dashboard = () => {
                 </span>
               </div>
             </div>
-            
             <div className="crypto-item">
               <div className="crypto-price">$102.23</div>
               <div className="crypto-details">
@@ -167,7 +174,6 @@ const Dashboard = () => {
                 </span>
               </div>
             </div>
-            
             <div className="crypto-item">
               <div className="crypto-price">$2437.67</div>
               <div className="crypto-details">
@@ -177,7 +183,6 @@ const Dashboard = () => {
                 </span>
               </div>
             </div>
-            
             <div className="crypto-item">
               <div className="crypto-price">$0.26</div>
               <div className="crypto-details">
@@ -187,7 +192,6 @@ const Dashboard = () => {
                 </span>
               </div>
             </div>
-            
             <div className="crypto-item">
               <div className="crypto-price">$0.81</div>
               <div className="crypto-details">
@@ -241,14 +245,12 @@ const Dashboard = () => {
           <div className="refer-left">
             <h2>Let's explore best</h2>
             <h1>Refer friends & earn</h1>
-            
             <div className="referral-link">
               <input type="text" value="Please activate the package." readOnly />
               <button className="copy-button">
                 <FaCopy />
               </button>
             </div>
-            
             <div className="referral-features">
               <div className="feature-item">
                 <span className="check-icon">✓</span> 100+ Best professionals for your support
@@ -258,7 +260,6 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          
           <div className="refer-right">
             <div className="refer-card">
               <h3>Refer friends & earn</h3>
@@ -268,7 +269,6 @@ const Dashboard = () => {
                 <RiSendPlaneFill />
               </div>
             </div>
-            
             <div className="gsec-card">
               <div className="gsec-image">
                 <img src="https://via.placeholder.com/100x70" alt="GS 2025" />

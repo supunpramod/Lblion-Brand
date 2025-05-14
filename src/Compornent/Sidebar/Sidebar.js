@@ -37,13 +37,44 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Popup */}
       <PopUp show={showPopup} onClose={() => setShowPopup(false)}>
-        <div style={{ background: '#1976d2', borderRadius: 8, padding: 12, display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-          <img src={dapulogo} alt="LB Logo" style={{ width: 80, height: 80, marginBottom: 12 }} />
-          <div style={{ color: '#fff', fontSize: 22, fontWeight: 600 }}>Coming Soon</div>
-        </div>
-      </PopUp>
+  <div
+    style={{
+      background: 'linear-gradient(to right,rgb(43, 48, 42),rgb(160, 157, 146))',
+      borderRadius: 0,
+      padding: 20,
+      display: 'flex',
+      alignItems: 'center',
+      flexDirection: 'column',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+      maxWidth: 300,
+      margin: 'auto'
+    }}
+  >
+    <img
+      src={dapulogo}
+      alt="LB Logo"
+      style={{
+        width: 100,
+        height: 100,
+        marginBottom: 16,
+        borderRadius: '50%',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)'
+      }}
+    />
+    <div
+      style={{
+        color: 'yellow',
+        fontSize: 24,
+        fontWeight: 700,
+        textAlign: 'center'
+      }}
+    >
+      Coming Soon
+    </div>
+  </div>
+</PopUp>
+
 
       {/* Sidebar */}
       <nav id="sidebar" className={sidebarCollapsed ? 'collapsed' : ''}>
