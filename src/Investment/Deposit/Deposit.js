@@ -4,11 +4,10 @@ import { Link } from 'react-router-dom';
 import { FaSun, FaMoon, FaThLarge, FaLanguage, FaBell, FaUserCircle } from 'react-icons/fa';
 import Sidebar from '../../Compornent/Sidebar/Sidebar.js';
 
-
-
 const Deposit = () => {
   const [amount, setAmount] = useState(30);
   const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
+  const [showModal, setShowModal] = useState(false); // Modal visibility state
   const gasFeePercent = 3;
 
   const gasFee = (amount * gasFeePercent) / 100;
@@ -26,7 +25,7 @@ const Deposit = () => {
 
   return (
     <div className={`dashboard-container ${isDarkMode ? 'dark-mode' : ''}`}>
-     <Sidebar />
+      <Sidebar />
       
       <main className="main-content">
         <div className="top-navigation">
@@ -63,7 +62,12 @@ const Deposit = () => {
             <div className="total-amount">
               TOTAL AMOUNT: USDT {total.toFixed(2)}
             </div>
-            <button className="deposit-btn">Deposit</button>
+            <button
+              className="deposit-btn"
+              onClick={() => setShowModal(true)} // Modal එක පෙන්වීමට
+            >
+              Deposit
+            </button>
           </div>
 
           <div className="info-boxes">
@@ -81,6 +85,23 @@ const Deposit = () => {
             </div>
           </div>
         </div>
+
+        {/* Modal */}
+        {showModal && (
+          <div className="modal-overlay">
+            <div className="modal-box">
+              <span className="close-btn" onClick={() => setShowModal(false)}>
+                &times;
+              </span>
+              <h2 className="modal-title">Select Payment Method</h2>
+              <p>Please select the payment method to continue the process.</p>
+              <p className="note">
+                <span className="gas-fee">GAS FEE</span> will be added to every order.
+              </p>
+              <button className="manual-pay-btn">💰 MANUAL PAY</button>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
