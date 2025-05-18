@@ -15,6 +15,7 @@ import CustomerSupport from './Customer Support/Custormer_support.js';
 import Tutorial from './Tutorial/Tutorial.js';
 import MyRank from "./Summery/MyRank/MyRank.js";
 import CalendarPage from "./Summery/Mycalander/Mycalendar.js";
+import CustomPackageRequest from './CustomPackageRequest/custompackagerequest.js';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
     <Route path="/ProfileSettings" element={<ProfileSettings />} />
     <Route path="/KycDashboard" element={<KycDashboard/>} />
     <Route path="/Deposit" element={<Deposit />} />
+    <Route path="/Deposit/custompackgerequest" element={<CustomPackageRequest />} />
     <Route path="/PurchaseHistory" element={<PurchaseHistory />} />
     <Route path="/ReferralLevel" element={<ReferralLevel />} />
     <Route path="/CustomerSupport" element={<CustomerSupport />} />

@@ -98,7 +98,7 @@ const Deposit = () => {
               <p className="note">
                 <span className="gas-fee">GAS FEE</span> will be added to every order.
               </p>
-              <button className="manual-pay-btn">💰 MANUAL PAY</button>
+             <Link to ="/Deposit/custompackgerequest"><button className="manual-pay-btn">💰 MANUAL PAY</button> </Link>
             </div>
           </div>
         )}
