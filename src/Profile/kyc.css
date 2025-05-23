@@ -9,6 +9,11 @@ body {
     display: flex;
     height: 100vh;
   }
+  .kyc-dashboard {
+    display: flex;
+    height: 100vh;
+  }
+  
   
   .sidebar {
     width: 230px;
