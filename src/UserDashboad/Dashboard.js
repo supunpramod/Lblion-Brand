@@ -65,17 +65,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="trade-settings-card">
-          <div className="trade-settings-content">
-            <h2>Daily Trade Income Settings</h2>
-            <p>To receive trade income for tomorrow (2025-05-07), please enable this option. If disabled, you will not receive any trade income.</p>
-          </div>
-          <div className="toggle-switch-wrapper">
-            <div className={`toggle-switch ${isTradeEnabled ? 'enabled' : ''}`} onClick={toggleTrade}>
-              <div className="toggle-button"></div>
-            </div>
-          </div>
-        </div>
+        
 
         <div className="user-greeting-section">
           <div className="greeting-text">
@@ -119,35 +109,7 @@ const Dashboard = () => {
               <div className="summary-amount">$ 0.00</div>
             </div>
           </div>
-          <div className="personal-details-card">
-            <h3>Personal Details Summary</h3>
-            <div className="user-id">CWC4</div>
-            <div className="referral-text">Referral Username</div>
-            <div className="details-row">
-              <div className="detail-col">
-                <div className="detail-value">0</div>
-                <div className="detail-label">Active Direct Sales</div>
-              </div>
-              <div className="detail-col">
-                <div className="detail-value">0</div>
-                <div className="detail-label">Inactive Direct Sales</div>
-              </div>
-            </div>
-            <div className="details-row">
-              <div className="detail-col">
-                <div className="detail-value">2025-05-10</div>
-                <div className="detail-label">Register Date</div>
-              </div>
-              <div className="detail-col">
-                <div className="detail-value">-</div>
-                <div className="detail-label">Active Date</div>
-              </div>
-            </div>
-            <div className="status-tags">
-              <span className="status-tag not-verified">Not Verified</span>
-              <span className="status-tag inactive">InActive</span>
-            </div>
-          </div>
+          
         </div>
 
         <div className="crypto-price-ticker">
@@ -204,41 +166,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Investment Options Cards */}
-        <div className="investment-options">
-          <div className="option-card">
-            <div className="option-icon active-icon"></div>
-            <div className="option-text">Active Investments</div>
-          </div>
-          <div className="option-card">
-            <div className="option-icon events-icon"></div>
-            <div className="option-text">My Events</div>
-          </div>
-          <div className="option-card">
-            <div className="option-icon plans-icon"></div>
-            <div className="option-text">Investment Plans</div>
-          </div>
-          <div className="option-card">
-            <div className="option-icon withdraw-icon"></div>
-            <div className="option-text">Withdraw</div>
-          </div>
-          <div className="option-card">
-            <div className="option-icon retirement-icon"></div>
-            <div className="option-text">Retirement Plans</div>
-          </div>
-          <div className="option-card">
-            <div className="option-icon tax-icon"></div>
-            <div className="option-text">Tax Saving Investments</div>
-          </div>
-          <div className="option-card">
-            <div className="option-icon return-icon"></div>
-            <div className="option-text">Guaranteed Return</div>
-          </div>
-          <div className="option-card">
-            <div className="option-icon securities-icon"></div>
-            <div className="option-text">Government Securities</div>
-          </div>
-        </div>
+        
 
         {/* Refer & Earn Section */}
         <div className="refer-section">
@@ -252,42 +180,25 @@ const Dashboard = () => {
               </button>
             </div>
             <div className="referral-features">
-              <div className="feature-item">
-                <span className="check-icon">✓</span> 100+ Best professionals for your support
-              </div>
-              <div className="feature-item">
-                <span className="check-icon">✓</span> We have Quick, Easy and Trusted partners
-              </div>
+              
             </div>
           </div>
           <div className="refer-right">
             <div className="refer-card">
               <h3>Refer friends & earn</h3>
-              <p>Ask your friend to join us & earn 10% of profit they made first time.</p>
+              
               <button className="invite-button">Invite to Join</button>
               <div className="send-icon">
                 <RiSendPlaneFill />
               </div>
             </div>
-            <div className="gsec-card">
-              <div className="gsec-image">
-                <img src="https://via.placeholder.com/100x70" alt="GS 2025" />
-              </div>
-              <span className="gsec-tag">G-SEC</span>
-              <div className="gsec-content">
-                <h3>New GS 2025</h3>
-                <p>Ends on <strong>Thu, 1 Aug 2024</strong></p>
-                <p>Indicative Yield* <strong>7.05%</strong></p>
-                <button className="place-bid">Place Bid</button>
-              </div>
-            </div>
+            
           </div>
         </div>
 
         {/* Bottom Tabs */}
         <div className="bottom-tabs">
-          <div className="tab">Latest Package Earnings</div>
-          <div className="tab">Direct/Indirect Sales</div>
+          
           <div className="tab">Trade Income</div>
         </div>
       </main>
