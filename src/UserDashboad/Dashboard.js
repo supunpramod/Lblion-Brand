@@ -5,24 +5,22 @@ import { FaMoon, FaSun, FaThLarge, FaLanguage, FaBell, FaUserCircle, FaLongArrow
 import { RiSendPlaneFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 
-
-
-
-
-
-
-
 const Dashboard = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    // Initialize theme from localStorage or system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) return savedTheme === 'dark';
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
   const [isTradeEnabled, setIsTradeEnabled] = useState(false);
 
   useEffect(() => {
-    document.body.classList.add('dark-mode');
-  }, []);
+    // Save theme preference to localStorage
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    document.body.classList.toggle('dark-mode');
+    setIsDarkMode(prevMode => !prevMode);
   };
 
   const toggleTrade = () => {
@@ -30,29 +28,15 @@ const Dashboard = () => {
   };
 
   return (
-    <div className={`dashboad-container ${isDarkMode ? 'dark-mode' : ''}`}>
-      {/* 2. Background Video & Overlay */}
-      {/* <div className="video-background">
-        <video
-          src={backgroundVideo2}
-          type="video/mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="bg-video"
-        />
-        <div className="overlay"></div>
-      </div> */}
-
+    <div className={`dashboard-container ${isDarkMode ? 'dark-mode' : ''}`}>
       <Sidebar />
       <main className="main-content">
         <div className="top-navigation">
           <div className="nav-tabs">
             <Link to="/Dashboard"><button className="nav-tab active">Dashboard</button></Link>
-            <Link to="/WallertDashboard"> <button className="nav-tab">Wallet</button>  </Link>
+            <Link to="/WallertDashboard"><button className="nav-tab">Wallet</button></Link>
             <button className="nav-tab">Transaction</button>
-            <Link to="/CustomerSupport"> <button className="nav-tab">Support Ticket</button></Link>
+            <Link to="/CustomerSupport"><button className="nav-tab">Support Ticket</button></Link>
           </div>
           <div className="action-buttons">
             <button className="icon-button" onClick={toggleTheme}>
@@ -64,8 +48,6 @@ const Dashboard = () => {
             <button className="icon-button user-icon"><FaUserCircle /></button>
           </div>
         </div>
-
-        
 
         <div className="user-greeting-section">
           <div className="greeting-text">
@@ -109,7 +91,6 @@ const Dashboard = () => {
               <div className="summary-amount">$ 0.00</div>
             </div>
           </div>
-          
         </div>
 
         <div className="crypto-price-ticker">
@@ -166,8 +147,6 @@ const Dashboard = () => {
           </div>
         </div>
 
-        
-
         {/* Refer & Earn Section */}
         <div className="refer-section">
           <div className="refer-left">
@@ -179,26 +158,21 @@ const Dashboard = () => {
                 <FaCopy />
               </button>
             </div>
-            <div className="referral-features">
-              
-            </div>
+            <div className="referral-features"></div>
           </div>
           <div className="refer-right">
             <div className="refer-card">
               <h3>Refer friends & earn</h3>
-              
               <button className="invite-button">Invite to Join</button>
               <div className="send-icon">
                 <RiSendPlaneFill />
               </div>
             </div>
-            
           </div>
         </div>
 
         {/* Bottom Tabs */}
         <div className="bottom-tabs">
-          
           <div className="tab">Trade Income</div>
         </div>
       </main>
