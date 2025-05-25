@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import './sidebar.css';
-import { FaHome, FaUser, FaChartLine, FaExchangeAlt, FaWallet, FaUsers, FaFileInvoiceDollar, FaHeadset, FaGraduationCap, FaHeart, FaCalendarAlt, FaEnvelope, FaQuestionCircle } from 'react-icons/fa';
+import { FaHome, FaUser, FaChartLine, FaExchangeAlt, FaWallet, FaUsers, FaFileInvoiceDollar, FaHeadset, FaGraduationCap, FaHeart, FaCalendarAlt, FaEnvelope, FaQuestionCircle, } from 'react-icons/fa';
+import { IoMdSettings } from "react-icons/io";
+import { PiNotepadFill } from "react-icons/pi";
 import logo from './lb-logo.avif';
 import dapulogo from './dapu-logo.jpg'; // ඔබගේ "LB" ලාංඡනය මෙහි path එකට දමන්න
 import { Link } from 'react-router-dom';
+
 
 
 
@@ -185,7 +188,7 @@ const Sidebar = () => {
                 className="nav-link dropdown-toggle" 
                 onClick={() => toggleSubmenu('income')}
               >
-                <FaFileInvoiceDollar className="menu-icon" />
+                <PiNotepadFill  className="menu-icon" />
                 <span className="menu-text">Summary</span>
               </button>
               {openMenu === 'income' && (
@@ -212,7 +215,7 @@ const Sidebar = () => {
             </li>
             <li>
               <button className="nav-link">
-                <FaGraduationCap className="menu-icon" />
+                <IoMdSettings className="menu-icon" />
                 <Link to="/Profile"><span className="menu-text">Settings</span></Link>
               </button>
             </li>

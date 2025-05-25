@@ -1,69 +1,190 @@
-/*body {
-    background-color: #020818;
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  */
-  body{
-    background-color: aliceblue;
-  }
-  .support-container {
-    padding: 30px;
-    background-color: #020818;
-    min-height: 100vh;
-  }
-  
-  .breadcrumb {
-    color: #aaa;
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
-  
-  .ticket-card {
-    background-color: #05153c;
-    border-radius: 15px;
-    padding: 20px;
-    width: 100%;
-    max-width: 600px;
-  }
-  
-  .ticket-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    font-size: 18px;
-  }
-  
-  .add-ticket {
-    background-color: transparent;
-    color: #3f7bfc;
-    border: 1px solid #3f7bfc;
-    padding: 8px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 500;
-  }
-  
-  .add-ticket:hover {
-    background-color: #3f7bfc;
-    color: white;
-  }
-  
-  .footer {
-    margin-top: 40px;
-    font-size: 13px;
-    color: #888;
-    display: flex;
-    justify-content: space-between;
-    max-width: 600px;
-  }
-  
-  .footer a {
-    color: #3f7bfc;
-    text-decoration: none;
-    margin: 0 6px;
-  }
-  
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #020818;
+  color: white;
+}
+
+body.dark-mode .support-container {
+  background-color: #020818;
+}
+
+body.dark-mode .ticket-card {
+  background-color: #05153c;
+  color: white;
+}
+
+body.dark-mode .breadcrumb {
+  color: #aaa;
+}
+
+body.dark-mode .footer {
+  color: #888;
+}
+
+body.dark-mode .footer a {
+  color: #3f7bfc;
+}
+
+body.dark-mode .nav-tab {
+  background-color: transparent;
+  color: #aaa;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .nav-tab:hover,
+body.dark-mode .nav-tab.active {
+  color: #3f7bfc;
+  border-bottom: 2px solid #3f7bfc;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+  background-color: aliceblue;
+  color: #333;
+}
+
+body.light-mode .support-container {
+  background-color: aliceblue;
+}
+
+body.light-mode .ticket-card {
+  background-color: #ffffff;
+  color: #333;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .breadcrumb {
+  color: #666;
+}
+
+body.light-mode .footer {
+  color: #666;
+}
+
+body.light-mode .footer a {
+  color: #007bff;
+}
+
+body.light-mode .nav-tab {
+  background-color: transparent;
+  color: #555;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+body.light-mode .nav-tab:hover,
+body.light-mode .nav-tab.active {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+}
+
+/* Common Styles */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.top-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.nav-tabs {
+  display: flex;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.icon-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.support-container {
+  padding: 30px;
+  min-height: calc(100vh - 100px);
+  transition: background-color 0.3s ease;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.ticket-card {
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+.add-ticket {
+  background-color: transparent;
+  border: 1px solid #3f7bfc;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.add-ticket:hover {
+  background-color: #3f7bfc;
+  color: white;
+}
+
+.footer {
+  margin-top: 40px;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  transition: color 0.3s ease;
+}
+
+.footer a {
+  text-decoration: none;
+  margin: 0 6px;
+  transition: color 0.3s ease;
+}

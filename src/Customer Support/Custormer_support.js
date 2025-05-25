@@ -7,18 +7,23 @@ import Sidebar from '../Compornent/Sidebar/Sidebar.js'; // Ensure the path is co
 const SupportTickets = () => {
   const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
 
-  // Set dark mode on initial load
+  // Set theme on initial load and when toggled
   useEffect(() => {
-    document.body.classList.add('dark-mode');
-  }, []);
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+      document.body.classList.remove('light-mode');
+    } else {
+      document.body.classList.add('light-mode');
+      document.body.classList.remove('dark-mode');
+    }
+  }, [isDarkMode]);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
-    document.body.classList.toggle('dark-mode');
   };
 
   return (
-    <div className={`dashboard-container ${isDarkMode ? 'dark-mode' : ''}`}>
+    <div className={`dashboard-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
       <Sidebar />
       
       <main className="main-content">

@@ -66,18 +66,7 @@ const WalletDashboard = () => {
           </div>
         </div>
         
-        <div className="trade-settings-card">
-          <div className="trade-settings-content">
-            <h2>Daily Trade Income Settings</h2>
-            <p>To receive trade income for tomorrow (2025-05-07), please enable this option. If disabled, you will not receive any trade income.</p>
-          </div>
-          <div className="toggle-switch-wrapper">
-            <div className={`toggle-switch ${isTradeEnabled ? 'enabled' : ''}`} onClick={toggleTrade}>
-              <div className="toggle-button"></div>
-            </div>
-          </div>
-        </div>
-        
+       
         <div className="wallet-summary-section">
           <div className="wallet-card">
             <h3>Your Internal Wallet</h3>
