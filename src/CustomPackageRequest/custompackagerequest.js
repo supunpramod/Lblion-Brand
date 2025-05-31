@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { QRCodeCanvas } from 'qrcode.react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const CustomPackageRequest = () => {
   const [transactionId, setTransactionId] = useState('');
   const [paymentSlip, setPaymentSlip] = useState(null);
+  
+  // Retrieve the passed data from the Link state
+  const location = useLocation();
+  const { amount = 30, gasFee = 0.9, total = 30.9 } = location.state || {};
 
   const walletAddress = 'TMSGbuwCjSkjbd9sXFf1Z3nKHjxeXb6CwL';
-  const totalAmount = 30.9;
 
   const handleFileChange = (e) => {
     setPaymentSlip(e.target.files[0]);
@@ -45,15 +48,15 @@ const CustomPackageRequest = () => {
       <div>
         <p>
           <strong>Total Amount:</strong>{' '}
-          <span style={{ color: '#ffb3c6', fontWeight: 'bold' }}>USDT 30.9</span>
+          <span style={{ color: '#ffb3c6', fontWeight: 'bold' }}>USDT {total.toFixed(2)}</span>
         </p>
         <p>
           <strong>Price:</strong>{' '}
-          <span style={{ color: '#ffb3c6', fontWeight: 'bold' }}>USDT 30</span>
+          <span style={{ color: '#ffb3c6', fontWeight: 'bold' }}>USDT {amount.toFixed(2)}</span>
         </p>
         <p>
           <strong>Gas Fee:</strong>{' '}
-          <span style={{ color: '#ffb3c6', fontWeight: 'bold' }}>USDT 0.9</span>
+          <span style={{ color: '#ffb3c6', fontWeight: 'bold' }}>USDT {gasFee.toFixed(2)}</span>
         </p>
         <p>
           <strong>Package:</strong> Custom
@@ -104,7 +107,7 @@ const CustomPackageRequest = () => {
           {walletAddress}
         </div>
         <div style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: '#ccc' }}>
-          Total Amount: {totalAmount} USDT<br />
+          Total Amount: {total.toFixed(2)} USDT<br />
           <small>Without network fee</small>
         </div>
       </div>

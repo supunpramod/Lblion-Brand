@@ -64,7 +64,7 @@ const Deposit = () => {
             </div>
             <button
               className="deposit-btn"
-              onClick={() => setShowModal(true)} // Modal එක පෙන්වීමට
+              onClick={() => setShowModal(true)} // Show modal
             >
               Deposit
             </button>
@@ -98,7 +98,12 @@ const Deposit = () => {
               <p className="note">
                 <span className="gas-fee">GAS FEE</span> will be added to every order.
               </p>
-             <Link to ="/Deposit/custompackgerequest"><button className="manual-pay-btn">💰 MANUAL PAY</button> </Link>
+              <Link 
+                to="/Deposit/custompackagerequest"
+                state={{ amount, gasFee, total }} // Pass amount, gasFee, and total to the next page
+              >
+                <button className="manual-pay-btn">💰 MANUAL PAY</button>
+              </Link>
             </div>
           </div>
         )}
