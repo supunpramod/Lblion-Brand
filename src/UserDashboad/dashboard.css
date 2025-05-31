@@ -1,27 +1,44 @@
 /* General Layout Styles */
+
+
 .dashboard-container {
   display: flex;
   min-height: 100vh;
   background: #f5f7fa; /* Default light theme background */
   color: #333; /* Default light theme text color */
   transition: background 0.3s ease, color 0.3s ease;
+  
 }
 
 .main-content {
   flex: 1;
   margin-left: 250px; /* Adjust based on Sidebar width */
+  margin-top: 80px; /* Match navbar height */
   padding: 20px;
   transition: all 0.3s ease;
 }
 
+/* Navbar */
 .top-navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
   transition: background 0.3s ease, color 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 250px;
+  right: 0;
+  padding: 20px;
+  z-index: 1000;
+  background: #f5f7fa;
 }
 
+.dark-mode .top-navigation {
+  background: #0c1122;
+}
+
+/* Nav Tabs */
 .nav-tabs {
   display: flex;
   gap: 10px;
@@ -41,20 +58,67 @@
   font-weight: bold;
 }
 
+/* Action Buttons */
 .action-buttons {
   display: flex;
   gap: 10px;
 }
 
 .icon-button {
-  background: none;
+  background: transparent;
   border: none;
   cursor: pointer;
   font-size: 20px;
   padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.3s ease;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 40px;
+  height: 40px;
 }
 
+.icon-button:hover {
+  background: rgba(37, 117, 252, 0.1);
+  transform: scale(1.1);
+  color: #2575fc;
+}
+
+.icon-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .icon-button {
+  color: #e4e6eb;
+  background: transparent;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .icon-button:hover {
+  background: rgba(106, 17, 203, 0.2);
+  transform: scale(1.1);
+  color: #6a11cb;
+}
+
+.dark-mode .icon-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.05);
+}
+
+.icon-button.user-icon {
+  font-size: 24px;
+  background: rgba(37, 117, 252, 0.05);
+}
+
+.dark-mode .icon-button.user-icon {
+  background: rgba(106, 17, 203, 0.1);
+}
+
+/* Greeting Section */
 .user-greeting-section {
   display: flex;
   justify-content: space-between;
@@ -73,6 +137,7 @@
   margin: 5px 0 0 0;
 }
 
+/* Stats Cards */
 .stats-cards {
   display: flex;
   gap: 20px;
@@ -100,6 +165,7 @@
   margin-top: 5px;
 }
 
+/* Main Dashboard Layout */
 .main-dashboard-content {
   display: flex;
   gap: 20px;
@@ -107,6 +173,7 @@
   transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* Wallet Card */
 .wallet-card {
   background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
   padding: 20px;
@@ -132,6 +199,7 @@
   opacity: 0.8;
 }
 
+/* Summary */
 .summary-container {
   flex: 2;
   transition: background 0.3s ease, color 0.3s ease;
@@ -162,6 +230,7 @@
   margin-top: 5px;
 }
 
+/* Crypto Price Ticker */
 .crypto-price-ticker {
   display: flex;
   align-items: center;
@@ -222,6 +291,7 @@
   align-items: center;
 }
 
+/* Refer Section */
 .refer-section {
   display: flex;
   gap: 20px;
@@ -235,7 +305,6 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .refer-left h2 {
@@ -283,7 +352,6 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 100%;
-  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .refer-card h3 {
@@ -307,6 +375,7 @@
   color: #2575fc;
 }
 
+/* Bottom Tabs */
 .bottom-tabs {
   display: flex;
   gap: 10px;
@@ -322,7 +391,7 @@
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Dark Mode Styles */
+/* Dark Mode */
 .dark-mode {
   background: #0c1122;
   color: #e4e6eb;
@@ -337,7 +406,7 @@
 .dark-mode .user-greeting-section,
 .dark-mode .main-dashboard-content,
 .dark-mode .bottom-tabs {
-  background: transparent;
+  background:#0c1122 ;
   color: #e4e6eb;
 }
 

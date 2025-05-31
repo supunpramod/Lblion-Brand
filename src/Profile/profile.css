@@ -198,4 +198,10 @@ body {
     background-color: #005bb5;
   }
   
+
+  .form-message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: green; /* දෝෂ සඳහා color: red; භාවිතා කරන්න */
+}
   
