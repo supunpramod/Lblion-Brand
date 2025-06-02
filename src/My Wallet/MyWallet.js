@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './mywallet.css'; // Ensure the CSS file is correctly named and styled
-import Sidebar from '../Compornent/Sidebar/Sidebar.js'; // Check folder name for accuracy
+import './mywallet.css';
+import Sidebar from '../Compornent/Sidebar/Sidebar.js';
 import { Link } from 'react-router-dom';
 import { FaSun, FaMoon, FaThLarge, FaLanguage, FaBell, FaUserCircle } from 'react-icons/fa';
 import {
@@ -25,21 +25,27 @@ const infoCards = [
 ];
 
 const WalletDashboard = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
-  const [isTradeEnabled, setIsTradeEnabled] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Set dark mode on initial load
   useEffect(() => {
-    document.body.classList.add('dark-mode');
-  }, []);
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [isDarkMode]);
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    document.body.classList.toggle('dark-mode');
+    setIsDarkMode(prev => !prev);
   };
 
-  const toggleTrade = () => {
-    setIsTradeEnabled(!isTradeEnabled);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(prev => !prev);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -48,13 +54,22 @@ const WalletDashboard = () => {
       
       <main className="main-content">
         <div className="top-navigation">
-          <div className="nav-tabs">
-            <Link to="/Dashboard"><button className="nav-tab">Dashboard</button></Link>
-            <Link to="/WallertDashboard"><button className="nav-tab active">Wallet</button></Link>
-            <button className="nav-tab">Transaction</button>
-           <Link to="/CustomerSupport" ><button className="nav-tab">Support Ticket</button></Link>
+
+          {/* Hamburger Icon */}
+          <div className="hamburger-icon" onClick={toggleMobileMenu}>
+            <span className={isMobileMenuOpen ? 'line rotate1' : 'line'}></span>
+            <span className={isMobileMenuOpen ? 'line fade' : 'line'}></span>
+            <span className={isMobileMenuOpen ? 'line rotate2' : 'line'}></span>
           </div>
-          
+
+          {/* Navigation Tabs */}
+          <div className={`nav-tabs ${isMobileMenuOpen ? 'mobile-active' : ''}`}>
+            <Link to="/Dashboard"><button className="nav-tab" onClick={closeMobileMenu}>Dashboard</button></Link>
+            <Link to="/WallertDashboard"><button className="nav-tab active" onClick={closeMobileMenu}>Wallet</button></Link>
+            <button className="nav-tab" onClick={closeMobileMenu}>Transaction</button>
+            <Link to="/CustomerSupport"><button className="nav-tab" onClick={closeMobileMenu}>Support Ticket</button></Link>
+          </div>
+
           <div className="action-buttons">
             <button className="icon-button" onClick={toggleTheme}>
               {isDarkMode ? <FaSun /> : <FaMoon />}
@@ -66,7 +81,6 @@ const WalletDashboard = () => {
           </div>
         </div>
         
-       
         <div className="wallet-summary-section">
           <div className="wallet-card">
             <h3>Your Internal Wallet</h3>

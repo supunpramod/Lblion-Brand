@@ -483,3 +483,483 @@
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .top-navigation,
+  .user-greeting-section,
+  .main-dashboard-content,
+  .refer-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stats-cards,
+  .crypto-items {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Additional Responsive Adjustments */
+  .nav-tabs {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .nav-tab {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .action-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .icon-button {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .greeting-text h2 {
+    font-size: 20px;
+  }
+
+  .greeting-text h3 {
+    font-size: 16px;
+  }
+
+  .wallet-card {
+    min-width: 100%;
+    padding: 15px;
+  }
+
+  .wallet-amount {
+    font-size: 24px;
+  }
+
+  .crypto-item {
+    min-width: 100px;
+    padding: 5px 0;
+  }
+
+  .crypto-price {
+    font-size: 16px;
+  }
+
+  .referral-link {
+    flex-direction: column;
+  }
+
+  .referral-link input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .bottom-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/* Additional Breakpoint for Very Small Screens (e.g., phones below 480px) */
+@media (max-width: 480px) {
+  .greeting-text h2 {
+    font-size: 18px;
+  }
+
+  .wallet-amount {
+    font-size: 20px;
+  }
+
+  .stat-amount,
+  .summary-amount {
+    font-size: 18px;
+  }
+
+  .crypto-price {
+    font-size: 14px;
+  }
+
+  .refer-left h1 {
+    font-size: 20px;
+  }
+
+  .refer-card h3 {
+    font-size: 18px;
+  }
+
+  .invite-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+ /* Mobile-First Responsive Styles */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .main-content {
+    margin-left: 0;
+    margin-top: 60px; /* Reduced for mobile */
+    padding: 10px;
+  }
+
+  .top-navigation {
+    left: 0;
+    padding: 10px 15px;
+    height: 60px; /* Reduced height for mobile */
+  }
+
+  .nav-tabs {
+    display: none; /* Hide tabs on mobile - consider mobile menu */
+  }
+
+  .mobile-menu-button {
+    display: block !important; /* Add this if you want a mobile menu button */
+  }
+
+  .action-buttons {
+    gap: 5px;
+  }
+
+  .icon-button {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .user-greeting-section {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .stats-cards {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .stat-card {
+    width: 100%;
+  }
+
+  .main-dashboard-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .wallet-card {
+    width: 100%;
+  }
+
+  .crypto-price-ticker {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .ticker-label {
+    margin-bottom: 10px;
+  }
+
+  .crypto-items {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .crypto-item {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .refer-section {
+    flex-direction: column;
+  }
+
+  .referral-link {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .referral-link input {
+    width: 100%;
+  }
+
+  .copy-button {
+    width: 100%;
+  }
+
+  .bottom-tabs {
+    flex-direction: column;
+  }
+
+  .tab {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Extra Small Devices (phones, 480px and down) */
+@media (max-width: 480px) {
+  .main-content {
+    margin-top: 50px;
+    padding: 8px;
+  }
+
+  .top-navigation {
+    padding: 8px 10px;
+    height: 50px;
+  }
+
+  .greeting-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .greeting-text h3 {
+    font-size: 0.9rem;
+  }
+
+  .stat-card,
+  .summary-card {
+    padding: 10px;
+  }
+
+  .stat-title,
+  .summary-title {
+    font-size: 12px;
+  }
+
+  .stat-amount,
+  .summary-amount {
+    font-size: 16px;
+  }
+
+  .wallet-amount {
+    font-size: 1.5rem;
+  }
+
+  .refer-left h1 {
+    font-size: 1.3rem;
+  }
+
+  .refer-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .invite-button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Orientation-specific adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .main-content {
+    margin-top: 50px;
+  }
+  
+  .stats-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .stat-card {
+    flex: 1 1 45%;
+    min-width: auto;
+  }
+}
+
+/* Tablet-specific adjustments (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-content {
+    margin-left: 200px; /* Reduced sidebar width */
+  }
+  
+  .top-navigation {
+    left: 200px;
+  }
+  
+  .stats-cards {
+    flex-wrap: wrap;
+  }
+  
+  .stat-card {
+    flex: 1 1 45%;
+    margin-bottom: 15px;
+  }
+  
+  .main-dashboard-content {
+    flex-direction: column;
+  }
+  
+  .refer-section {
+    flex-direction: column;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .icon-button {
+    min-width: 44px; /* Minimum touch target size */
+    min-height: 44px;
+  }
+  
+  .nav-tab {
+    padding: 12px 20px; /* Larger touch targets */
+  }
+  
+  .copy-button, .invite-button {
+    padding: 12px 24px;
+  }
+}
+
+/* General Layout Styles */
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f7fa;
+  color: #333;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  margin-top: 80px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.top-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 250px;
+  right: 0;
+  padding: 20px;
+  z-index: 1000;
+  background: #f5f7fa;
+}
+
+/* Additional styles omitted for brevity. See original message for full content. */
+
+
+/* Hamburger Icon */
+.hamburger-icon {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  margin-left: 15px;
+}
+
+.hamburger-icon .line {
+  width: 28px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-icon .rotate1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-icon .rotate2 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.hamburger-icon .fade {
+  opacity: 0;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .hamburger-icon {
+    display: flex;
+  }
+
+  .nav-tabs {
+    display: none;
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    background-color: #fff;
+    flex-direction: column;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    min-width: 180px;
+  }
+
+  .dashboard-container.dark-mode .nav-tabs {
+    background-color: #1e1e1e;
+  }
+
+  .nav-tabs.mobile-active {
+    display: flex;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .nav-tab {
+    font-size: 16px;
+    padding: 8px 0;
+    color: #333;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .dashboard-container.dark-mode .nav-tab {
+    color: #fff;
+  }
+
+  .nav-tab:hover {
+    color: #007bff;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}

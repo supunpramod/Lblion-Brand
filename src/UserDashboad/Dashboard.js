@@ -7,24 +7,19 @@ import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    // Initialize theme from localStorage or system preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) return savedTheme === 'dark';
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
-  const [isTradeEnabled, setIsTradeEnabled] = useState(false);
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Save theme preference to localStorage
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
 
   const toggleTheme = () => {
-    setIsDarkMode(prevMode => !prevMode);
-  };
-
-  const toggleTrade = () => {
-    setIsTradeEnabled(!isTradeEnabled);
+    setIsDarkMode(prev => !prev);
   };
 
   return (
@@ -32,23 +27,40 @@ const Dashboard = () => {
       <Sidebar />
       <main className="main-content">
         <div className="top-navigation">
-          <div className="nav-tabs">
-            <Link to="/Dashboard"><button className="nav-tab active">Dashboard</button></Link>
-            <Link to="/WallertDashboard"><button className="nav-tab">Wallet</button></Link>
-            <button className="nav-tab">Transaction</button>
-            <Link to="/CustomerSupport"><button className="nav-tab">Support Ticket</button></Link>
+          {/* Hamburger Icon */}
+          <div
+            className="hamburger-icon"
+            onClick={() => setIsMobileMenuOpen(prev => !prev)}
+            aria-label="Toggle navigation menu"
+            role="button"
+            tabIndex={0}
+            onKeyDown={e => { if (e.key === 'Enter') setIsMobileMenuOpen(prev => !prev); }}
+          >
+            <span className={isMobileMenuOpen ? 'line rotate1' : 'line'}></span>
+            <span className={isMobileMenuOpen ? 'line fade' : 'line'}></span>
+            <span className={isMobileMenuOpen ? 'line rotate2' : 'line'}></span>
           </div>
+
+          {/* Navigation Tabs */}
+          <div className={`nav-tabs ${isMobileMenuOpen ? 'mobile-active' : ''}`}>
+            <Link to="/Dashboard"><button className="nav-tab active" onClick={() => setIsMobileMenuOpen(false)}>Dashboard</button></Link>
+            <Link to="/WallertDashboard"><button className="nav-tab" onClick={() => setIsMobileMenuOpen(false)}>Wallet</button></Link>
+            <button className="nav-tab" onClick={() => setIsMobileMenuOpen(false)}>Transaction</button>
+            <Link to="/CustomerSupport"><button className="nav-tab" onClick={() => setIsMobileMenuOpen(false)}>Support Ticket</button></Link>
+          </div>
+
           <div className="action-buttons">
-            <button className="icon-button" onClick={toggleTheme}>
+            <button className="icon-button" onClick={toggleTheme} aria-label="Toggle dark/light mode">
               {isDarkMode ? <FaSun /> : <FaMoon />}
             </button>
-            <button className="icon-button"><FaThLarge /></button>
-            <button className="icon-button"><FaLanguage /></button>
-            <button className="icon-button"><FaBell /></button>
-            <button className="icon-button user-icon"><FaUserCircle /></button>
+            <button className="icon-button" aria-label="Dashboard grid"><FaThLarge /></button>
+            <button className="icon-button" aria-label="Language options"><FaLanguage /></button>
+            <button className="icon-button" aria-label="Notifications"><FaBell /></button>
+            <button className="icon-button user-icon" aria-label="User profile"><FaUserCircle /></button>
           </div>
         </div>
 
+        {/* Rest of your dashboard content unchanged */}
         <div className="user-greeting-section">
           <div className="greeting-text">
             <h3>Good Evening,</h3>
@@ -103,75 +115,58 @@ const Dashboard = () => {
               <div className="crypto-price">$103544.00</div>
               <div className="crypto-details">
                 <span className="crypto-name">BITCOIN:</span>
-                <span className="percentage-up">
-                  <FaLongArrowAltUp /> 0.56%
-                </span>
+                <span className="percentage-up"><FaLongArrowAltUp /> 0.56%</span>
               </div>
             </div>
             <div className="crypto-item">
               <div className="crypto-price">$102.23</div>
               <div className="crypto-details">
                 <span className="crypto-name">LITECOIN:</span>
-                <span className="percentage-up">
-                  <FaLongArrowAltUp /> 4.06%
-                </span>
+                <span className="percentage-up"><FaLongArrowAltUp /> 4.06%</span>
               </div>
             </div>
             <div className="crypto-item">
               <div className="crypto-price">$2437.67</div>
               <div className="crypto-details">
                 <span className="crypto-name">ETHEREUM:</span>
-                <span className="percentage-up">
-                  <FaLongArrowAltUp /> 5.92%
-                </span>
+                <span className="percentage-up"><FaLongArrowAltUp /> 5.92%</span>
               </div>
             </div>
             <div className="crypto-item">
               <div className="crypto-price">$0.26</div>
               <div className="crypto-details">
                 <span className="crypto-name">TRON:</span>
-                <span className="percentage-up">
-                  <FaLongArrowAltUp /> 0.58%
-                </span>
+                <span className="percentage-up"><FaLongArrowAltUp /> 0.58%</span>
               </div>
             </div>
             <div className="crypto-item">
               <div className="crypto-price">$0.81</div>
               <div className="crypto-details">
                 <span className="crypto-name">CARDANO:</span>
-                <span className="percentage-up">
-                  <FaLongArrowAltUp /> 3.94%
-                </span>
+                <span className="percentage-up"><FaLongArrowAltUp /> 3.94%</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Refer & Earn Section */}
         <div className="refer-section">
           <div className="refer-left">
             <h2>Let's explore best</h2>
             <h1>Refer friends & earn</h1>
             <div className="referral-link">
               <input type="text" value="Please activate the package." readOnly />
-              <button className="copy-button">
-                <FaCopy />
-              </button>
+              <button className="copy-button" aria-label="Copy referral link"><FaCopy /></button>
             </div>
-            <div className="referral-features"></div>
           </div>
           <div className="refer-right">
             <div className="refer-card">
               <h3>Refer friends & earn</h3>
               <button className="invite-button">Invite to Join</button>
-              <div className="send-icon">
-                <RiSendPlaneFill />
-              </div>
+              <div className="send-icon"><RiSendPlaneFill /></div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Tabs */}
         <div className="bottom-tabs">
           <div className="tab">Trade Income</div>
         </div>
