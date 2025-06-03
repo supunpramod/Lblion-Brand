@@ -1,0 +1,218 @@
+/* ===== Navbar Container ===== */
+.top-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--navbar-bg, #ffffff);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 250px;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Hamburger Icon ===== */
+.hamburger-icon {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1001;
+  position: relative;
+}
+
+.hamburger-icon .line {
+  height: 3px;
+  width: 100%;
+  background-color: var(--text-color, #2d3748);
+  border-radius: 3px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.hamburger-icon .rotate1 {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-icon .rotate2 {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.hamburger-icon .fade {
+  opacity: 0;
+}
+
+/* ===== Navigation Tabs ===== */
+.nav-tabs {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-tab {
+  position: relative;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color, #4a5568);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.nav-tab:hover {
+  color: var(--primary-color, #4299e1);
+  background-color: var(--hover-bg, #ebf8ff);
+}
+
+.nav-tab.active {
+  color: var(--primary-color, #4299e1);
+  font-weight: 600;
+}
+
+.nav-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background-color: var(--primary-color, #4299e1);
+  border-radius: 3px;
+}
+
+/* ===== Action Buttons ===== */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.icon-button {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--text-color, #4a5568);
+  padding: 0.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.icon-button:hover {
+  background-color: var(--hover-bg, #ebf8ff);
+  color: var(--primary-color, #4299e1);
+  transform: translateY(-2px);
+}
+
+.icon-button:active {
+  transform: translateY(0);
+}
+
+.icon-button .notification-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 8px;
+  height: 8px;
+  background-color: #f56565;
+  border-radius: 50%;
+  border: 2px solid var(--navbar-bg, #ffffff);
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--user-icon-bg, #edf2f7);
+  color: var(--user-icon-color, #2d3748);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.user-icon:hover {
+  background-color: var(--primary-color, #4299e1);
+  color: white;
+}
+
+/* ===== Mobile Styles ===== */
+@media (max-width: 1024px) {
+  .top-navigation {
+    left: 0;
+    padding: 1rem;
+  }
+  
+  .hamburger-icon {
+    display: flex;
+  }
+
+  .nav-tabs {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--navbar-bg, #ffffff);
+    flex-direction: column;
+    padding: 6rem 2rem 2rem;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+  }
+
+  .nav-tabs.mobile-active {
+    left: 0;
+  }
+
+  .nav-tab {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-tab.active::after {
+    left: 1rem;
+    transform: none;
+    width: 4px;
+    height: 60%;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+}
+
+/* ===== Dark Mode Variables ===== */
+.dark-mode .top-navigation {
+  --navbar-bg: #1a202c;
+  --text-color: #e2e8f0;
+  --hover-bg: rgba(66, 153, 225, 0.1);
+  --primary-color: #63b3ed;
+  --user-icon-bg: #2d3748;
+  --user-icon-color: #e2e8f0;
+}
+
+/* ===== Animation Keyframes ===== */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.icon-button.notification-active {
+  animation: pulse 1.5s infinite;
+}
