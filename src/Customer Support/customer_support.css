@@ -42,11 +42,7 @@ body.dark-mode .nav-tab {
   transition: color 0.3s ease;
 }
 
-body.dark-mode .nav-tab:hover,
-body.dark-mode .nav-tab.active {
-  color: #3f7bfc;
-  border-bottom: 2px solid #3f7bfc;
-}
+
 
 /* Light Mode Styles */
 body.light-mode {
