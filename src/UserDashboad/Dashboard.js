@@ -1,9 +1,10 @@
+// src/pages/Dashboard.js
 import React, { useState, useEffect } from 'react';
 import './dashboard.css';
 import Sidebar from '../Compornent/Sidebar/Sidebar.js';
-import { FaMoon, FaSun, FaThLarge, FaLanguage, FaBell, FaUserCircle, FaLongArrowAltUp, FaCopy } from 'react-icons/fa';
+import Navbar from '../navbar/navbar.js';
+import { FaLongArrowAltUp, FaCopy } from 'react-icons/fa';
 import { RiSendPlaneFill } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -11,8 +12,6 @@ const Dashboard = () => {
     if (savedTheme) return savedTheme === 'dark';
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
-
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
@@ -26,41 +25,9 @@ const Dashboard = () => {
     <div className={`dashboard-container ${isDarkMode ? 'dark-mode' : ''}`}>
       <Sidebar />
       <main className="main-content">
-        <div className="top-navigation">
-          {/* Hamburger Icon */}
-          <div
-            className="hamburger-icon"
-            onClick={() => setIsMobileMenuOpen(prev => !prev)}
-            aria-label="Toggle navigation menu"
-            role="button"
-            tabIndex={0}
-            onKeyDown={e => { if (e.key === 'Enter') setIsMobileMenuOpen(prev => !prev); }}
-          >
-            <span className={isMobileMenuOpen ? 'line rotate1' : 'line'}></span>
-            <span className={isMobileMenuOpen ? 'line fade' : 'line'}></span>
-            <span className={isMobileMenuOpen ? 'line rotate2' : 'line'}></span>
-          </div>
+        <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
 
-          {/* Navigation Tabs */}
-          <div className={`nav-tabs ${isMobileMenuOpen ? 'mobile-active' : ''}`}>
-            <Link to="/Dashboard"><button className="nav-tab active" onClick={() => setIsMobileMenuOpen(false)}>Dashboard</button></Link>
-            <Link to="/WallertDashboard"><button className="nav-tab" onClick={() => setIsMobileMenuOpen(false)}>Wallet</button></Link>
-            <button className="nav-tab" onClick={() => setIsMobileMenuOpen(false)}>Transaction</button>
-            <Link to="/CustomerSupport"><button className="nav-tab" onClick={() => setIsMobileMenuOpen(false)}>Support Ticket</button></Link>
-          </div>
-
-          <div className="action-buttons">
-            <button className="icon-button" onClick={toggleTheme} aria-label="Toggle dark/light mode">
-              {isDarkMode ? <FaSun /> : <FaMoon />}
-            </button>
-            <button className="icon-button" aria-label="Dashboard grid"><FaThLarge /></button>
-            <button className="icon-button" aria-label="Language options"><FaLanguage /></button>
-            <button className="icon-button" aria-label="Notifications"><FaBell /></button>
-            <button className="icon-button user-icon" aria-label="User profile"><FaUserCircle /></button>
-          </div>
-        </div>
-
-        {/* Rest of your dashboard content unchanged */}
+        {/* Greeting Section */}
         <div className="user-greeting-section">
           <div className="greeting-text">
             <h3>Good Evening,</h3>
@@ -82,6 +49,7 @@ const Dashboard = () => {
           </div>
         </div>
 
+        {/* Main Dashboard Content */}
         <div className="main-dashboard-content">
           <div className="wallet-card">
             <h3>Your Main Wallet</h3>
@@ -105,6 +73,7 @@ const Dashboard = () => {
           </div>
         </div>
 
+        {/* Crypto Price Ticker */}
         <div className="crypto-price-ticker">
           <div className="ticker-label">
             <div>Updates:</div>
@@ -149,6 +118,7 @@ const Dashboard = () => {
           </div>
         </div>
 
+        {/* Refer Section */}
         <div className="refer-section">
           <div className="refer-left">
             <h2>Let's explore best</h2>
@@ -167,6 +137,7 @@ const Dashboard = () => {
           </div>
         </div>
 
+        {/* Bottom Tabs */}
         <div className="bottom-tabs">
           <div className="tab">Trade Income</div>
         </div>
