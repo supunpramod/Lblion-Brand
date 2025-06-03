@@ -924,10 +924,7 @@
     min-width: 180px;
   }
 
-  .dashboard-container.dark-mode .nav-tabs {
-    background-color: #1e1e1e;
-  }
-
+  
   .nav-tabs.mobile-active {
     display: flex;
     animation: slideDown 0.3s ease-out;
@@ -963,3 +960,49 @@
     }
   }
 }
+
+
+  .crypto-items {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .crypto-item {
+    min-width: 100%;
+  }
+
+  .refer-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .refer-left,
+  .refer-right {
+    width: 100%;
+  }
+
+  .referral-link {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .referral-link input {
+    width: 100%;
+  }
+
+  .copy-button {
+    width: 100%;
+  }
+
+  .bottom-tabs {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .tab {
+    width: 100%;
+    text-align: center;
+  }
+

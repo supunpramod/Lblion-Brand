@@ -1,66 +1,91 @@
-import React, { useState } from 'react';
-import { FaMoon, FaSun, FaThLarge, FaLanguage, FaBell, FaUserCircle } from 'react-icons/fa';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import {
+  FaMoon,
+  FaSun,
+  FaThLarge,
+  FaLanguage,
+  FaBell,
+  FaUserCircle,
+} from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './navbar.css';
+
+const navItems = [
+  { path: '/Dashboard', label: 'Dashboard' },
+  { path: '/WallertDashboard', label: 'Wallet' },
+  { path: '/Transactions', label: 'Transaction' },
+  { path: '/CustomerSupport', label: 'Support Ticket' },
+];
 
 const Navbar = ({ isDarkMode, toggleTheme }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navRef = useRef(null);
 
-  // Close mobile menu when clicking outside
-  const handleClickOutside = (e) => {
-    if (!e.target.closest('.nav-tabs') && !e.target.closest('.hamburger-icon')) {
+  const handleClickOutside = useCallback((e) => {
+    if (
+      navRef.current &&
+      !navRef.current.contains(e.target) &&
+      !e.target.closest('.hamburger-btn')
+    ) {
       setIsMobileMenuOpen(false);
     }
-  };
-
-  // Add event listener for clicks outside
-  React.useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Navigation items data
-  const navItems = [
-    { path: "/Dashboard", label: "Dashboard" },
-    { path: "/WallertDashboard", label: "Wallet" },
-    { path: "/Transactions", label: "Transaction" },
-    { path: "/CustomerSupport", label: "Support Ticket" },
-  ];
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const events = ['mousedown', 'touchstart'];
+    events.forEach((event) =>
+      document.addEventListener(event, handleClickOutside)
+    );
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'auto';
+
+    return () => {
+      events.forEach((event) =>
+        document.removeEventListener(event, handleClickOutside)
+      );
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMobileMenuOpen, handleClickOutside]);
+
+  const toggleMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen((prev) => !prev);
+  }, []);
 
   return (
     <header className={`top-navigation ${isDarkMode ? 'dark' : 'light'}`}>
-      {/* Hamburger Icon - More accessible */}
-      <button
-        className="hamburger-icon"
-        onClick={() => setIsMobileMenuOpen(prev => !prev)}
-        aria-label="Toggle navigation menu"
-        aria-expanded={isMobileMenuOpen}
-      >
-        <span className={isMobileMenuOpen ? 'line rotate1' : 'line'}></span>
-        <span className={isMobileMenuOpen ? 'line fade' : 'line'}></span>
-        <span className={isMobileMenuOpen ? 'line rotate2' : 'line'}></span>
-      </button>
+      {/* Custom Hamburger Icon */}
+      
 
-      {/* Navigation Tabs - Dynamic rendering */}
-      <nav className={`nav-tabs ${isMobileMenuOpen ? 'mobile-active' : ''}`}>
+      {/* Navigation Tabs */}
+      <nav
+        ref={navRef}
+        role="navigation"
+        className={`nav-tabs ${isMobileMenuOpen ? 'mobile-active' : ''}`}
+      >
         {navItems.map((item) => (
-          <Link 
-            key={item.path} 
+          <Link
+            key={item.path}
             to={item.path}
-            className={`nav-tab ${location.pathname === item.path ? 'active' : ''}`}
-            onClick={() => setIsMobileMenuOpen(false)}
+            className={`nav-tab ${
+              location.pathname === item.path ? 'active' : ''
+            }`}
+            onClick={toggleMobileMenu}
           >
             {item.label}
           </Link>
         ))}
       </nav>
 
-      {/* Action buttons */}
+      {/* Action Buttons */}
       <div className="action-buttons">
-        <button 
-          className="icon-button" 
-          onClick={toggleTheme} 
+        <button
+          className="icon-button"
+          onClick={toggleTheme}
           aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
         >
           {isDarkMode ? <FaSun /> : <FaMoon />}
@@ -82,4 +107,9 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
   );
 };
 
-export default Navbar;
+Navbar.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired,
+  toggleTheme: PropTypes.func.isRequired,
+};
+
+export default React.memo(Navbar);

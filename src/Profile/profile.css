@@ -119,14 +119,7 @@ body {
     color: white;
   }
   
-  button {
-    padding: 8px 12px;
-    background-color: #f5c518;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+ 
   
   .profile-form {
     display: grid;

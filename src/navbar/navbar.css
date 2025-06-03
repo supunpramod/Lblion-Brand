@@ -216,3 +216,91 @@
 .icon-button.notification-active {
   animation: pulse 1.5s infinite;
 }
+
+
+
+
+
+
+
+
+/* Light / Dark mode support */
+.top-navigation.light {
+  --nav-bg: #ffffff;
+  --text-color: #111111;
+}
+.top-navigation.dark {
+  --nav-bg: #1f1f1f;
+  --text-color: #f0f0f0;
+}
+
+/* Hamburger icon button */
+.hamburger-icon {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+  display: none; /* hidden by default (desktop) */
+}
+
+/* Show hamburger icon on small screens */
+@media (max-width: 768px) {
+  .hamburger-icon {
+    display: block;
+  }
+
+  .nav-tabs {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--nav-bg);
+    flex-direction: column;
+    display: none;
+  }
+
+  .nav-tabs.mobile-active {
+    display: flex;
+  }
+
+  .nav-tab {
+    padding: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+}
+
+/* Desktop nav tabs */
+.nav-tabs {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-tab {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.nav-tab.active {
+  border-bottom: 2px solid var(--text-color);
+}
+
+/* Action buttons (right side) */
+.action-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+
+
+
