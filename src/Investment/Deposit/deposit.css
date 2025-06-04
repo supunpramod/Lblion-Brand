@@ -1,142 +1,142 @@
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: white;
-    color: white;
-  } 
-  
-  .investment-dashboard {
-    display: flex;
-    height: 100vh;
-  }
-  
-  .sidebar {
-    width: 230px;
-    background: #000;
-    padding: 1.5rem 1rem;
-  }
-  
-  .brand {
-    color: gold;
-    font-size: 1.6rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-  }
-  
-  .menu {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .menu li {
-    padding: 0.8rem;
-    cursor: pointer;
-    color: white;
-  }
-  
-  .expandable > .submenu {
-    list-style: none;
-    padding-left: 1rem;
-    margin-top: 0.3rem;
-  }
-  
-  .submenu li {
-    padding: 0.5rem 0;
-    font-size: 0.9rem;
-    color: #ccc;
-  }
-  
-  .highlighted {
-    color: #fff;
-    background: #0042ff;
-    border-radius: 10px;
-    padding: 0.4rem 0.6rem;
-    display: inline-block;
-  }
-  
-  .main-content {
-    flex: 1;
-    padding: 1.5rem;
-  }
-  
-  .topbar nav {
-    display: flex;
-    gap: 2rem;
-    background: #12142e;
-    padding: 0.8rem 1.5rem;
-    border-radius: 10px;
-  }
-  
-  .investment-section h3 {
-    margin: 1rem 0 0.2rem 0;
-  }
-  
-  .breadcrumbs {
-    font-size: 0.9rem;
-    color: #aaa;
-  }
-  
-  .investment-box {
-    background-color: #718de2;
-    margin-top: 1rem;
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-  }
-  
-  .investment-box input {
-    margin-top: 1rem;
-    padding: 0.6rem 1rem;
-    width: 50%;
-    border-radius: 20px;
-    border: none;
-    background: #000;
-    color: #fff;
-    font-size: 1rem;
-    text-align: center;
-  }
-  
-  .total-amount {
-    margin-top: 1rem;
-    color: black;
-    background-color: #00e0ff;
-    padding: 0.6rem 1.2rem;
-    display: inline-block;
-    border-radius: 20px;
-    font-weight: bold;
-  }
-  
-  .deposit-btn {
-    margin-top: 1.2rem;
-    background: #0042ff;
-    color: white;
-    border: none;
-    padding: 0.6rem 2rem;
-    font-size: 1rem;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-  
-  .info-boxes {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-    justify-content: center;
-  }
-  
-  .info-card {
-    background: #6a72e0;
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    width: 180px;
-    margin: 2rem;
-  }
-  
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: white;
+  color: white;
+}
 
+.investment-dashboard {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+}
 
+.sidebar {
+  width: 230px;
+  background: #000;
+  padding: 1.5rem 1rem;
+}
 
-  .modal-overlay {
+.brand {
+  color: gold;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 0.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+.expandable > .submenu {
+  list-style: none;
+  padding-left: 1rem;
+  margin-top: 0.3rem;
+}
+
+.submenu li {
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.highlighted {
+  color: #fff;
+  background: #0042ff;
+  border-radius: 10px;
+  padding: 0.4rem 0.6rem;
+  display: inline-block;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.topbar nav {
+  display: flex;
+  gap: 2rem;
+  background: #12142e;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+
+.investment-section h3 {
+  margin: 1rem 0 0.2rem 0;
+}
+
+.breadcrumbs {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.investment-box {
+  background-color: #718de2;
+  margin-top: 1rem;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.investment-box input {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  width: 50%;
+  border-radius: 20px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.total-amount {
+  margin-top: 1rem;
+  color: black;
+  background-color: #00e0ff;
+  padding: 0.6rem 1.2rem;
+  display: inline-block;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.deposit-btn {
+  margin-top: 1.2rem;
+  background: #0042ff;
+  color: white;
+  border: none;
+  padding: 0.6rem 2rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.info-boxes {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.info-card {
+  background: #6a72e0;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  width: 180px;
+  margin: 1rem;
+}
+
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -154,7 +154,8 @@ body {
   color: white;
   padding: 30px;
   border-radius: 12px;
-  width: 350px;
+  width: 90%;
+  max-width: 350px;
   position: relative;
   text-align: center;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
@@ -200,4 +201,56 @@ body {
 
 .manual-pay-btn:hover {
   background-color: #2449a1;
+}
+
+/* ✅ Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .investment-dashboard {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .menu li {
+    padding: 0.5rem 1rem;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #111;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .topbar nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .investment-box input {
+    width: 90%;
+  }
+
+  .info-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-card {
+    width: 90%;
+    margin: 1rem 0;
+  }
 }

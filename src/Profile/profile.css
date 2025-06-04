@@ -1,200 +1,328 @@
-/* ProfileSettings.css */
+/* Base Styles */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  transition: all 0.3s;
+}
 
-body {
-    margin: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .profile-page {
-    display: flex;
-    min-height: 100vh;
-    background-color: #0e1229;
-    color: white;
-  }
-  
-  .sidebar {
-    width: 250px;
-    background-color: #0a0d1b;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #f5c518;
-    margin-bottom: 30px;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar ul li {
-    padding: 10px 0;
-    cursor: pointer;
-  }
-  
-  .sidebar ul li.active {
-    font-weight: bold;
-    color: #f5c518;
-  }
-  
-  .submenu {
-    margin-top: 5px;
-    padding-left: 15px;
-    font-size: 14px;
-  }
-  
-  .content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    background-color: #10152e;
-  }
-  
-  .top-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0f1325;
-    padding: 10px 20px;
-    border-bottom: 1px solid #1c2038;
-  }
-  
-  .top-nav span {
-    margin: 0 10px;
-    cursor: pointer;
-  }
-  
-  .profile-icon {
-    background-color: #3b3f58;
-    color: white;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-  }
-  
-  .account-settings {
-    padding: 30px;
-  }
-  
-  .account-settings h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #ffffff;
-  }
-  
-  .profile-info {
-    background-color: #1a1e35;
-    padding: 20px;
-    border-radius: 8px;
-    display: flex;
-    gap: 40px;
-  }
-  
-  .photo-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .avatar {
-    background-color: #2e334d;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 24px;
-    color: white;
-  }
-  
- 
-  
-  .profile-form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    flex: 1;
-  }
-  
-  .profile-form label {
-    display: flex;
-    flex-direction: column;
-    color: #bfc7e0;
-    font-size: 14px;
-  }
-  
-  .profile-form input,
-  .profile-form select {
-    padding: 8px;
-    margin-top: 5px;
-    background-color: #232a45;
-    border: 1px solid #3d4566;
-    color: white;
-    border-radius: 4px;
-    outline: none;
-  }
-  
-  .profile-form_password{
-    color: #bfc7e0;
-    font-size: 14px;
-    gap: 20px;
-    line-height: 3;
-    padding: auto;
-  }
-  .profile-form_password input,
-  .profile-form_password select {
-    padding: 8px;
-    margin-top: 5px;
-    background-color: #232a45;
-    border: 1px solid #3d4566;
-    color: white;
-    border-radius: 4px;
-    outline: none;
-    width:120%;
-    margin: auto;
-  }
-  
-  .profile-content{
-    background-color: #1a1e35;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 30px;
-  }
-  .profile-content h3{
-    color:#f5c518;
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode .main-content,
+.dark-mode .profile-form,
+.dark-mode .password-form,
+.dark-mode .settings-section {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea {
+  background-color: #333;
+  color: #fff;
+  border-color: #444;
+}
+
+.dark-mode .settings-section {
+  border-color: #444;
+}
+
+.dark-mode .settings-section h2 {
+  border-color: #444;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s;
+  margin-left: 250px; /* Adjust based on your sidebar width */
+}
+
+.account-settings {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.profile-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.photo-section {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.dark-mode .photo-section {
+  background-color: #333;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #4a6fa5;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.photo-upload-btn {
+  padding: 10px 20px;
+  background-color: #4a6fa5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.photo-upload-btn:hover {
+  background-color: #3a5a8f;
+}
+
+.profile-form, .password-form {
+  flex: 2;
+  min-width: 300px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.dark-mode .profile-form,
+.dark-mode .password-form {
+  background-color: #333;
+}
+
+.form-row {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form-footer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.save-btn {
+  padding: 12px 24px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  align-self: flex-start;
+}
+
+.save-btn:hover {
+  background-color: #45a049;
+}
+
+.settings-section {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border-left: 4px solid #4a6fa5;
+}
+
+.settings-section h2 {
+  margin-top: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  color: #4a6fa5;
+}
+
+.dark-mode .settings-section h2 {
+  color: #6a8fc5;
+}
+
+.settings-content {
+  padding: 15px 0;
+}
+
+.settings-content h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.dark-mode .settings-content h3 {
+  color: #ddd;
+}
+
+.settings-content p {
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.danger-zone {
+  border-left: 4px solid #f44336;
+}
+
+.delete-btn {
+  padding: 12px 24px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  align-self: flex-start;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+.form-message {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.dark-mode .form-message {
+  background-color: #1b5e20;
+  color: #e8f5e9;
+}
+
+.form-message.error {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.dark-mode .form-message.error {
+  background-color: #b71c1c;
+  color: #ffebee;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding-top: 60px;
+    position: relative;
   }
 
-  .save-btn {
-    padding: 10px 20px;
-    background-color: #0066cc; /* Blue color */
-    color: #ffffff;
+  .mobile-menu-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+    background: #4a6fa5;
+    color: white;
     border: none;
-    border-radius: 6px;
-    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
   }
-  
-  .save-btn:hover {
-    background-color: #005bb5;
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 15px;
   }
-  
+
+  .profile-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .photo-section {
+    width: 100%;
+    margin-bottom: 20px;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .profile-form, .password-form {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .form-row {
+    width: 100%;
+  }
+
+  .settings-section {
+    padding: 20px 15px;
+    margin-bottom: 25px;
+  }
+
+  .settings-content {
+    padding: 10px 0;
+  }
+
+  .save-btn, .delete-btn {
+    width: 100%;
+    padding: 12px;
+    align-self: center;
+  }
+
+  .form-footer {
+    align-items: center;
+  }
 
   .form-message {
-  margin-top: 10px;
-  font-size: 14px;
-  color: green; /* දෝෂ සඳහා color: red; භාවිතා කරන්න */
+    width: 100%;
+    text-align: center;
+  }
 }
-  
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .profile-section {
+    gap: 20px;
+  }
+
+  .photo-section {
+    min-width: 200px;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+    font-size: 36px;
+  }
+}

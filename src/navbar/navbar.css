@@ -1,87 +1,109 @@
+/* General reset for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .top-navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 2rem; /* Increased padding for better spacing */
   background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer, deeper shadow */
   position: relative;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; /* Modern font stack */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
 }
 
 .top-navigation.dark {
-  background-color: #1a1a1a;
-  color: #ffffff;
-
+  background-color: #121212; /* Darker, more modern dark mode */
+  color: #e0e0e0; /* Softer white for text */
 }
 
 .nav-tabs {
   display: flex;
-  gap: 1rem;
-  background-color: rgb(123, 128, 197);
-  border-radius: 10px;
+  gap: 1.5rem; /* Slightly larger gap for better separation */
+  background-color: transparent; /* Remove background for cleaner look */
+  border-radius: 12px;
+  padding: 0.5rem;
 }
 
 .nav-tab {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem; /* More padding for comfort */
   text-decoration: none;
-  color: inherit;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-  background-color: aquamarine;
+  color: #333333; /* Darker text for better contrast */
+  border-radius: 8px; /* Softer corners */
+  transition: all 0.3s ease; /* Smooth all transitions */
+  font-weight: 500; /* Medium weight for better readability */
+  background-color: #f1f3f5; /* Light neutral background */
 }
 
 .nav-tab:hover {
-  background-color: blue;
+  background-color: #e0e7ff; /* Subtle hover color */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.dark .nav-tab {
+  color: #e0e0e0;
+  background-color: #2a2a2a; /* Darker tab background */
 }
 
 .dark .nav-tab:hover {
-  background-color: rgb(3, 49, 250);
+  background-color: #3b82f6; /* Vibrant blue for hover */
+  transform: translateY(-2px);
 }
 
 .nav-tab.active {
-  background-color: #4a90e2;
-  color: white;
+  background-color: #2563eb; /* Bold blue for active state */
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
 }
 
 .dark .nav-tab.active {
-  background-color: #1e88e5;
+  background-color: #60a5fa; /* Lighter blue for dark mode */
 }
 
 .action-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem; /* More spacing for buttons */
   align-items: center;
 }
 
 .icon-button {
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.4rem; /* Slightly larger icons */
   cursor: pointer;
   color: inherit;
-  padding: 0.5rem;
+  padding: 0.75rem; /* Larger touch area */
   border-radius: 50%;
+  transition: all 0.3s ease;
 }
 
 .icon-button:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.1); /* Subtle hover effect */
+  transform: scale(1.1); /* Slight scale for feedback */
 }
 
 .dark .icon-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .user-icon {
-  font-size: 1.5rem;
+  font-size: 1.8rem; /* Larger user icon for prominence */
 }
 
 .hamburger-btn {
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem; /* Larger hamburger icon */
   cursor: pointer;
   color: inherit;
+  padding: 0.75rem;
+  transition: all 0.3s ease;
 }
 
 /* Mobile styles */
@@ -89,6 +111,7 @@
   .top-navigation {
     flex-direction: column;
     align-items: flex-start;
+    padding: 1rem 1.5rem;
   }
   
   .nav-header {
@@ -103,10 +126,15 @@
     flex-direction: column;
     width: 100%;
     margin-top: 1rem;
+    opacity: 0;
+    transform: translateY(-10px); /* Slide-in effect */
+    transition: all 0.3s ease;
   }
   
   .nav-tabs.mobile-active {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
   }
   
   .action-buttons {
@@ -118,13 +146,14 @@
   }
   
   .nav-tab {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     text-align: left;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem; /* Larger text for mobile */
   }
   
   .dark .nav-tab {
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   }
 }
 

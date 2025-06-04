@@ -1,4 +1,91 @@
-.calendar-wrapper{
-    background-color: rgb(72, 73, 75);
-    color:white;
+/* Base styles */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #0d1117;
+  color: white;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.calendar-wrapper {
+  margin-top: 20px;
+  background-color: #161b22;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Calendar title */
+.calendar-wrapper h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* FullCalendar tweaks */
+.fc .fc-toolbar-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.fc .fc-button {
+  background-color: #238636;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+  background-color: #2ea043;
+}
+
+/* Dark mode override */
+body.dark-mode {
+  background-color: #0d1117;
+  color: white;
+}
+
+/* ------------------------------
+   🔻 Mobile Responsive Section
+   ------------------------------ */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+
+  .calendar-wrapper {
+    padding: 15px;
+  }
+
+  .calendar-wrapper h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .fc .fc-toolbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .fc .fc-toolbar-chunk {
+    text-align: center;
+    width: 100%;
+  }
+
+  .fc .fc-button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .fc .fc-toolbar-title {
+    font-size: 1rem;
+  }
 }
