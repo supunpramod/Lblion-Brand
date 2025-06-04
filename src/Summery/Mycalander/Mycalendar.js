@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { FaSun, FaMoon, FaThLarge, FaLanguage, FaBell, FaUserCircle } from 'react-icons/fa';
 import Sidebar from '../../Compornent/Sidebar/Sidebar.js'; // Ensure the path is correct
 
+
 const CalendarPage = () => {
   const [ setSelectedDate] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
