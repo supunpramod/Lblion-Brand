@@ -3,6 +3,7 @@ import './purchace.css';
 import { Link } from 'react-router-dom';
 import { FaSun, FaMoon, FaThLarge, FaLanguage, FaBell, FaUserCircle } from 'react-icons/fa';
 import Sidebar from '../../Compornent/Sidebar/Sidebar';
+import Navbar from '../../navbar/navbar';
 
 const PurchaseHistory = () => {
   const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
@@ -22,24 +23,7 @@ const PurchaseHistory = () => {
       <Sidebar></Sidebar>
       
       <main className="main-content">
-        <div className="top-navigation">
-          <div className="nav-tabs">
-            <Link to="/Dashboard"><button className="nav-tab">Dashboard</button></Link>
-            <Link to="/WalletDashboard"><button className="nav-tab">Wallet</button></Link>
-            <button className="nav-tab">Transaction</button>
-            <button className="nav-tab">Support Ticket</button>
-          </div>
-          
-          <div className="action-buttons">
-            <button className="icon-button" onClick={toggleTheme}>
-              {isDarkMode ? <FaSun /> : <FaMoon />}
-            </button>
-            <button className="icon-button"><FaThLarge /></button>
-            <button className="icon-button"><FaLanguage /></button>
-            <button className="icon-button"><FaBell /></button>
-            <button className="icon-button user-icon"><FaUserCircle /></button>
-          </div>
-        </div>
+        <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
         
         <div className="purchase-container">
           <h2>Purchase History</h2>
