@@ -1,56 +1,28 @@
-/* Sidebar Styles */
+/* === Sidebar Styles === */
 #sidebar {
   background: #fff;
   color: #333;
   width: 230px;
   height: 100vh;
   position: fixed;
-  left: 0;
-  top: 0;
-  transition: all 0.3s;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  left: 0; top: 0;
+  transition: width 0.3s;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
   z-index: 100;
 }
 
-.popup-overlay {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.3);
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.popup-content {
-  background: #fff;
-  padding: 16px 16px 16px 16px;
-  border-radius: 10px;
-  position: relative;
-  min-width: 320px;
-  min-height: 180px;
-  text-align: center;
-  opacity: 95%;
-}
-.popup-close {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  background: #ff0202;
-  border: none;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-
 #sidebar.collapsed {
   width: 70px;
 }
 
+/* Sidebar Header */
 .sidebar-header {
   padding: 20px 15px;
   border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  align-items: center;
 }
 
 .brand-logo {
@@ -59,17 +31,14 @@
 }
 
 .logo-icon {
-  
+  width: 30px; height: 30px;
+  background: #222;
   color: #fff;
-  width: 30px;
-  height: 30px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   font-weight: bold;
   margin-right: 10px;
-  border: #222 2px solid;
+  border: 2px solid #222;
 }
 
 .logo-text h3 {
@@ -85,6 +54,7 @@
   margin-top: 2px;
 }
 
+/* Menu Section */
 .menu-section {
   padding: 15px;
   flex: 1;
@@ -95,13 +65,13 @@
   text-transform: uppercase;
   color: #888;
   margin-bottom: 15px;
+  
   padding: 0 5px;
 }
 
 .nav-menu {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 0; margin: 0;
 }
 
 .nav-link {
@@ -111,7 +81,7 @@
   border-radius: 8px;
   color: #555;
   text-decoration: none;
-  transition: all 0.3s;
+  transition: background 0.3s, color 0.3s;
   margin-bottom: 5px;
   width: 100%;
   background: none;
@@ -119,11 +89,10 @@
   text-align: left;
   cursor: pointer;
   font-size: 14px;
-  
 }
 
 .nav-link:hover {
-  background: rgba(13, 110, 253, 0.1);
+  background: rgba(13,110,253,0.1);
   color: #0d6efd;
 }
 
@@ -141,7 +110,6 @@
 .dropdown-toggle {
   position: relative;
 }
-
 .dropdown-toggle::after {
   content: "▾";
   position: absolute;
@@ -155,12 +123,12 @@
   padding: 0;
   margin: 0 0 10px 25px;
 }
-
 .submenu .nav-link {
   padding: 8px 10px;
   font-size: 13px;
 }
 
+/* Quick Links */
 .quick-links-section {
   border-top: 1px solid #f1f1f1;
   padding-bottom: 20px;
@@ -173,66 +141,50 @@
 }
 
 .quick-link-btn {
-  width: 36px;
-  height: 36px;
+  width: 36px; height: 36px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   background: #f5f5f5;
   border: none;
   color: #666;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 
 .quick-link-btn:hover {
-  background: rgba(13, 110, 253, 0.1);
+  background: rgba(13,110,253,0.1);
   color: #0d6efd;
 }
 
+/* Sidebar Toggle Button */
 .sidebar-toggle-button {
-  width: 30px;
-  height: 30px;
+  width: 30px; height: 30px;
   background: #f5f5f5;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   position: absolute;
-  top: 20px;
-  right: -15px;
+  top: 20px; right: -15px;
   cursor: pointer;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
   z-index: 10;
 }
 
 .toggle-icon {
-  width: 12px;
-  height: 2px;
+  width: 12px; height: 2px;
   background: #666;
   position: relative;
 }
-
 .toggle-icon::before,
 .toggle-icon::after {
   content: '';
-  width: 12px;
-  height: 2px;
+  width: 12px; height: 2px;
   background: #666;
-  position: absolute;
-  left: 0;
+  position: absolute; left: 0;
 }
+.toggle-icon::before { top: -4px; }
+.toggle-icon::after { bottom: -4px; }
 
-.toggle-icon::before {
-  top: -4px;
-}
-
-.toggle-icon::after {
-  bottom: -4px;
-}
-
-/* Collapsed state */
+/* Collapsed State */
 #sidebar.collapsed .menu-text,
 #sidebar.collapsed .dropdown-toggle::after,
 #sidebar.collapsed .user-id,
@@ -241,37 +193,69 @@
 #sidebar.collapsed .logo-text {
   display: none;
 }
-
 #sidebar.collapsed .nav-link {
   justify-content: center;
   padding: 15px 5px;
 }
-
 #sidebar.collapsed .menu-icon {
   margin-right: 0;
   font-size: 18px;
 }
-
 #sidebar.collapsed .quick-links {
   flex-direction: column;
   align-items: center;
 }
-
 #sidebar.collapsed .quick-link-btn {
   margin-bottom: 10px;
 }
 
+/* === Popup Styles === */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup-content {
+  background: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  position: relative;
+  min-width: 320px;
+  min-height: 180px;
+  text-align: center;
+  opacity: 0.95;
+}
+.popup-close {
+  position: absolute;
+  top: 8px; right: 12px;
+  background: #ff0202;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 50%;
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* === Responsive === */
 @media (max-width: 768px) {
   #sidebar {
     margin-left: -250px;
+    transition: margin-left 0.3s;
   }
-  
   #sidebar.active {
     margin-left: 0;
   }
+}
 
-
-
-
-
+.menu-section {
+  overflow-y: auto;    /* vertical scroll */
+  flex: 1 1 0%;
+  max-height: calc(150vh - 120px); 
+  /* Adjust this value as needed */
 }
