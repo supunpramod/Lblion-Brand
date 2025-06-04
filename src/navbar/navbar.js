@@ -6,6 +6,7 @@ import {
   FaLanguage,
   FaBell,
   FaUserCircle,
+  FaBars,
 } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -58,10 +59,16 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
 
   return (
     <header className={`top-navigation ${isDarkMode ? 'dark' : 'light'}`}>
-      {/* Custom Hamburger Icon */}
-      
+      <div className="nav-header">
+        <button 
+          className="hamburger-btn"
+          onClick={toggleMobileMenu}
+          aria-label="Toggle menu"
+        >
+          <FaBars />
+        </button>
+      </div>
 
-      {/* Navigation Tabs */}
       <nav
         ref={navRef}
         role="navigation"
@@ -81,7 +88,6 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
         ))}
       </nav>
 
-      {/* Action Buttons */}
       <div className="action-buttons">
         <button
           className="icon-button"
