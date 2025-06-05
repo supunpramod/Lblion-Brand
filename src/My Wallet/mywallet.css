@@ -5,128 +5,220 @@
     margin: 0;
     padding: 0;
     min-height: 100vh;
-  }
+}
 
-  
-  
-  .wallet-page {
-    padding: 20px;
+.wallet-page {
+    padding: 15px; /* Reduced padding for smaller screens */
     max-width: 1100px;
     margin: auto;
-  }
-  
-  .wallet-header {
+}
+
+.wallet-header {
     background-color: #cceeff;
     color: #003366;
-    padding: 20px;
-    border-radius: 20px;
-    margin-bottom: 30px;
+    padding: 15px; /* Reduced padding */
+    border-radius: 15px; /* Slightly smaller radius */
+    margin-bottom: 20px;
     position: relative;
-  }
-  
-  .wallet-header h2 {
+}
+
+.wallet-header h2 {
     margin-top: 0;
-  }
-  
-  .toggle-btn {
+    font-size: 1.5rem; /* Adjusted font size for mobile */
+}
+
+.toggle-btn {
     position: absolute;
-    right: 20px;
-    bottom: 20px;
-    width: 60px;
-    height: 30px;
+    right: 15px;
+    bottom: 15px;
+    width: 50px; /* Smaller width */
+    height: 25px; /* Smaller height */
     background: linear-gradient(to right, #ff7e5f, #feb47b);
     border-radius: 20px;
     display: flex;
     align-items: center;
-    padding: 4px;
-  }
-  
-  .toggle-circle {
-    width: 22px;
-    height: 22px;
+    padding: 3px;
+}
+
+.toggle-circle {
+    width: 18px; /* Smaller circle */
+    height: 18px;
     background-color: white;
     border-radius: 50%;
-  }
-  
-  .wallet-summary {
+}
+
+.wallet-summary {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px; /* Reduced gap */
     justify-content: space-between;
-  }
-  
-  .wallet-card {
+}
+
+.wallet-card {
     background-color: #111c3a;
-    border-radius: 15px;
-    padding: 20px;
-    flex: 1 1 200px;
+    border-radius: 10px; /* Smaller radius */
+    padding: 15px; /* Reduced padding */
+    flex: 1 1 100%; /* Full width on mobile */
     text-align: center;
     height: auto;
-  }
-  
-  .wallet-icon {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
-  
-  .wallet-card .balance {
-    font-size: 24px;
-    color: #fff;
-  }
-  
-  .wallet-card .label {
-    font-size: 14px;
-    color: #ccc;
-  }
+}
 
-  .wallet-card-card {
+.wallet-icon {
+    font-size: 30px; /* Smaller icon */
+    margin-bottom: 8px;
+}
+
+.wallet-card .balance {
+    font-size: 20px; /* Smaller font */
+    color: #fff;
+}
+
+.wallet-card .label {
+    font-size: 12px; /* Smaller font */
+    color: #ccc;
+}
+
+.wallet-card-card {
     background-color: #111c3a;
-    border-radius: 15px;
-    padding: 20px;
-    flex: 1 1 100px;
+    border-radius: 10px;
+    padding: 15px;
+    flex: 1 1 100%; /* Full width on mobile */
     text-align: center;
-    height: 250px;
+    height: auto; /* Adjusted height */
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
     justify-content: space-between;
-  }
-  
-  
-  .info-card {
+}
+
+.info-card {
     background-color: #1c243b;
-    padding: 15px;
-    border-radius: 12px;
-    flex: 1 1 150px;
-    height: 80px;
+    padding: 10px; /* Reduced padding */
+    border-radius: 8px;
+    flex: 1 1 100%; /* Full width on mobile */
+    height: auto; /* Adjusted height */
     color: #00cc99;
     text-align: center;
-  }
-  
-  .info-card p {
-    font-size: 18px;
+}
+
+.info-card p {
+    font-size: 16px; /* Smaller font */
     margin: 0;
-  }
-  
-  .info-card span {
-    font-size: 12px;
+}
+
+.info-card span {
+    font-size: 11px; /* Smaller font */
     color: #ccc;
-  }
-  
-  .chart-container {
-    
-    border-radius: 20px;
-    padding: 30px;
+}
+
+.chart-container {
+    border-radius: 15px;
+    padding: 15px; /* Reduced padding */
     color: white;
-    margin:30px 30%;
-    width: 400px;
-   
-  }
-  
-  .chart-container h3 {
+    margin: 20px 0; /* Adjusted margin for full width */
+    width: 100%; /* Full width on mobile */
+}
+
+.chart-container h3 {
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center;
-    font-size: 18px;
-  }
-  
+    font-size: 16px; /* Smaller font */
+}
+
+/* Media Queries for Tablets and Larger Screens */
+@media (min-width: 768px) {
+    .wallet-page {
+        padding: 20px; /* Original padding */
+    }
+
+    .wallet-header {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .wallet-header h2 {
+        font-size: 2rem; /* Larger font */
+    }
+
+    .toggle-btn {
+        width: 60px;
+        height: 30px;
+        padding: 4px;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .toggle-circle {
+        width: 22px;
+        height: 22px;
+    }
+
+    .wallet-card {
+        flex: 1 1 45%; /* Two cards per row on tablets */
+        border-radius: 15px;
+        padding: 20px;
+    }
+
+    .wallet-icon {
+        font-size: 36px;
+    }
+
+    .wallet-card .balance {
+        font-size: 24px;
+    }
+
+    .wallet-card .label {
+        font-size: 14px;
+    }
+
+    .wallet-card-card {
+        flex: 1 1 45%; /* Two per row */
+        height: 250px;
+    }
+
+    .info-card {
+        flex: 1 1 45%; /* Two per row */
+        height: 80px;
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .info-card p {
+        font-size: 18px;
+    }
+
+    .info-card span {
+        font-size: 12px;
+    }
+
+    .chart-container {
+        margin: 30px 15%; /* Centered with margin */
+        width: 70%; /* Adjusted width */
+        padding: 30px;
+    }
+
+    .chart-container h3 {
+        font-size: 18px;
+    }
+}
+
+/* Media Queries for Desktops */
+@media (min-width: 1024px) {
+    .wallet-card {
+        flex: 1 1 30%; /* Three cards per row on desktop */
+    }
+
+    .wallet-card-card {
+        flex: 1 1 30%;
+    }
+
+    .info-card {
+        flex: 1 1 30%;
+    }
+
+    .chart-container {
+        margin: 30px 30%; /* Original margin */
+        width: 400px; /* Original width */
+    }
+}

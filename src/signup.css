@@ -61,7 +61,7 @@
   .form-group label {
     font-weight: 600;
     margin-bottom: 6px;
-    color: #333;
+    color: #3f3838;
   }
   
   input,
@@ -93,10 +93,11 @@
   
   .form-check input[type="checkbox"] {
     transform: scale(1.2);
+
   }
   
   .form-check a {
-    color: #6b46c1;
+    color: #676272;
     text-decoration: underline;
   }
   
@@ -120,3 +121,59 @@
    
     max-height: 100vh;
   }
+
+.register-form p {
+  margin-top: 1.5em;
+  font-size: 1em;
+  color: #6c6c6c;
+}
+
+.register-form a {
+  color: #4267b2;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.register-form a:hover {
+  color: #f857a6;
+  text-decoration: underline;
+}
+
+.form-check{
+  text-align: left;
+  display: block;
+  color: #6c53af;
+
+}
+
+
+.form-check-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #7a7a7a;
+  font-weight: 400;
+}
+
+.form-check-input {
+  margin-right: 8px;
+  transform: scale(1.2);
+  vertical-align: middle;
+}
+
+.link {
+  color: #6a5ae0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+
+
+  
+
+  
+
