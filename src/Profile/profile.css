@@ -239,19 +239,7 @@ input, select {
     position: relative;
   }
 
-  .mobile-menu-toggle {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 1001;
-    background: #4a6fa5;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 20px;
-    cursor: pointer;
-  }
+  
 
   .main-content {
     margin-left: 0;
