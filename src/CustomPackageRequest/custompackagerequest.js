@@ -10,7 +10,7 @@ const CustomPackageRequest = () => {
   const location = useLocation();
   const { amount = 30, gasFee = 0.9, total = 30.9 } = location.state || {};
 
-  const walletAddress = 'TMSGbuwCjSkjbd9sXFf1Z3nKHjxeXb6CwL';
+  const walletAddress = 'TBx1HzKge2uFHte63qHcrmtEWZ1BJcMroq';
 
   const handleFileChange = (e) => {
     setPaymentSlip(e.target.files[0]);
