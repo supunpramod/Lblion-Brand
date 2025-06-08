@@ -6,7 +6,7 @@
   height: 100vh;
   position: fixed;
   left: 0; top: 0;
-  transition: width 0.3s;
+  transition: width 0.3s, margin-left 0.3s;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
@@ -58,6 +58,8 @@
 .menu-section {
   padding: 15px;
   flex: 1;
+  overflow-y: auto;
+  max-height: calc(150vh - 120px); 
 }
 
 .menu-title {
@@ -65,7 +67,6 @@
   text-transform: uppercase;
   color: #888;
   margin-bottom: 15px;
-  
   padding: 0 5px;
 }
 
@@ -245,17 +246,55 @@
 /* === Responsive === */
 @media (max-width: 768px) {
   #sidebar {
-    margin-left: -250px;
-    transition: margin-left 0.3s;
-  }
-  #sidebar.active {
+    width: 70px;
     margin-left: 0;
+    transition: width 0.3s, margin-left 0.3s;
+  }
+
+  /* Only icons visible on mobile */
+  #sidebar .menu-text,
+  #sidebar .dropdown-toggle::after,
+  #sidebar .user-id,
+  #sidebar .menu-title,
+  #sidebar .submenu,
+  
+  #sidebar .logo-text {
+    display: none !important;
+  }
+  #sidebar .nav-link {
+    justify-content: center;
+    padding: 15px 5px;
+  }
+  #sidebar .menu-icon {
+    margin-right: 0;
+    font-size: 18px;
+  }
+  #sidebar .quick-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  #sidebar .quick-link-btn {
+    margin-bottom: 10px;
+  }
+  .sidebar-toggle-button {
+    right: 10px;
   }
 }
 
-.menu-section {
-  overflow-y: auto;    /* vertical scroll */
-  flex: 1 1 0%;
-  max-height: calc(150vh - 120px); 
-  /* Adjust this value as needed */
+/* Sidebar Toggle Button */
+.sidebar-toggle-button {
+  width: 30px; height: 30px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  position: absolute;
+  top: 20px; right: -15px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+/* Hide toggle button everywhere */
+.sidebar-toggle-button {
+  display: none !important;
 }
