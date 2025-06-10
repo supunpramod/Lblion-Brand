@@ -1,15 +1,16 @@
-/* === Sidebar Styles === */
+/* === Sidebar Base Styles === */
 #sidebar {
-  background: #fff;
-  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 230px;
   height: 100vh;
-  position: fixed;
-  left: 0; top: 0;
-  transition: width 0.3s, margin-left 0.3s;
+  background: #fff;
+  color: #333;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
+  transition: width 0.3s, transform 0.3s ease; /* Transform එකට animation එක එකතු කරනවා */
   z-index: 100;
 }
 
@@ -17,12 +18,12 @@
   width: 70px;
 }
 
-/* Sidebar Header */
+/* === Sidebar Header === */
 .sidebar-header {
-  padding: 20px 15px;
-  border-bottom: 1px solid #f1f1f1;
   display: flex;
   align-items: center;
+  padding: 20px 15px;
+  border-bottom: 1px solid #f1f1f1;
 }
 
 .brand-logo {
@@ -31,11 +32,14 @@
 }
 
 .logo-icon {
-  width: 30px; height: 30px;
+  width: 30px;
+  height: 30px;
   background: #222;
   color: #fff;
   border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
   margin-right: 10px;
   border: 2px solid #222;
@@ -54,12 +58,12 @@
   margin-top: 2px;
 }
 
-/* Menu Section */
+/* === Menu === */
 .menu-section {
-  padding: 15px;
   flex: 1;
+  padding: 15px;
   overflow-y: auto;
-  max-height: calc(150vh - 120px); 
+  max-height: calc(100vh - 120px);
 }
 
 .menu-title {
@@ -72,28 +76,29 @@
 
 .nav-menu {
   list-style: none;
-  padding: 0; margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-link {
   display: flex;
   align-items: center;
   padding: 10px;
-  border-radius: 8px;
+  font-size: 14px;
   color: #555;
   text-decoration: none;
-  transition: background 0.3s, color 0.3s;
-  margin-bottom: 5px;
-  width: 100%;
-  background: none;
   border: none;
-  text-align: left;
+  background: none;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 14px;
+  transition: background 0.3s, color 0.3s;
+  width: 100%;
+  margin-bottom: 5px;
+  text-align: left;
 }
 
 .nav-link:hover {
-  background: rgba(13,110,253,0.1);
+  background: rgba(13, 110, 253, 0.1);
   color: #0d6efd;
 }
 
@@ -103,14 +108,15 @@
 }
 
 .menu-icon {
-  margin-right: 10px;
   font-size: 16px;
+  margin-right: 10px;
   min-width: 20px;
 }
 
 .dropdown-toggle {
   position: relative;
 }
+
 .dropdown-toggle::after {
   content: "▾";
   position: absolute;
@@ -121,15 +127,16 @@
 
 .submenu {
   list-style: none;
-  padding: 0;
   margin: 0 0 10px 25px;
+  padding: 0;
 }
+
 .submenu .nav-link {
   padding: 8px 10px;
   font-size: 13px;
 }
 
-/* Quick Links */
+/* === Quick Links === */
 .quick-links-section {
   border-top: 1px solid #f1f1f1;
   padding-bottom: 20px;
@@ -142,12 +149,15 @@
 }
 
 .quick-link-btn {
-  width: 36px; height: 36px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
   background: #f5f5f5;
-  border: none;
   color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
 }
@@ -157,35 +167,7 @@
   color: #0d6efd;
 }
 
-/* Sidebar Toggle Button */
-.sidebar-toggle-button {
-  width: 30px; height: 30px;
-  background: #f5f5f5;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  position: absolute;
-  top: 20px; right: -15px;
-  cursor: pointer;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  z-index: 10;
-}
-
-.toggle-icon {
-  width: 12px; height: 2px;
-  background: #666;
-  position: relative;
-}
-.toggle-icon::before,
-.toggle-icon::after {
-  content: '';
-  width: 12px; height: 2px;
-  background: #666;
-  position: absolute; left: 0;
-}
-.toggle-icon::before { top: -4px; }
-.toggle-icon::after { bottom: -4px; }
-
-/* Collapsed State */
+/* === Collapsed Sidebar === */
 #sidebar.collapsed .menu-text,
 #sidebar.collapsed .dropdown-toggle::after,
 #sidebar.collapsed .user-id,
@@ -194,107 +176,138 @@
 #sidebar.collapsed .logo-text {
   display: none;
 }
+
 #sidebar.collapsed .nav-link {
   justify-content: center;
   padding: 15px 5px;
 }
+
 #sidebar.collapsed .menu-icon {
   margin-right: 0;
   font-size: 18px;
 }
+
 #sidebar.collapsed .quick-links {
   flex-direction: column;
   align-items: center;
 }
+
 #sidebar.collapsed .quick-link-btn {
   margin-bottom: 10px;
 }
 
-/* === Popup Styles === */
+/* === Popup Overlay === */
 .popup-overlay {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0,0,0,0.3);
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .popup-content {
   background: #fff;
   padding: 16px;
   border-radius: 10px;
-  position: relative;
   min-width: 320px;
   min-height: 180px;
   text-align: center;
+  position: relative;
   opacity: 0.95;
 }
+
 .popup-close {
   position: absolute;
-  top: 8px; right: 12px;
+  top: 8px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
   background: #ff0202;
+  color: #fff;
   border: none;
   font-size: 22px;
-  cursor: pointer;
-  color: #fff;
   border-radius: 50%;
-  width: 28px; height: 28px;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-/* === Responsive === */
+/* === Responsive Sidebar === */
 @media (max-width: 768px) {
   #sidebar {
-    width: 70px;
-    margin-left: 0;
-    transition: width 0.3s, margin-left 0.3s;
+    width: 230px; /* Full width තබා ගනිමු */
+    transform: translateX(-100%); /* Default ලෙස sidebar එක තිරයෙන් ඉවතට ගෙන යාම */
+    transition: transform 0.3s ease; /* Animation එක සඳහා */
   }
 
-  /* Only icons visible on mobile */
+  #sidebar.active {
+    transform: translateX(0); /* Active වූ විට sidebar එක පෙන්වීම */
+  }
+
+  .sidebar-toggle-button:not(.desktop-toggle) {
+    display: block !important; /* Mobile තත්වයේදී toggle button එක පෙන්වීම */
+    position: fixed;
+    bottom: 20px; /* පහළට ගෙන යාමට bottom භාවිතා කරනවා */
+    left: 20px;
+    z-index: 101;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
   #sidebar .menu-text,
   #sidebar .dropdown-toggle::after,
   #sidebar .user-id,
   #sidebar .menu-title,
   #sidebar .submenu,
-  
   #sidebar .logo-text {
-    display: none !important;
+    display: block !important; /* Mobile තත්වයේදීත් මේවා පෙන්වීමට අවශ්‍ය නම් */
   }
+
   #sidebar .nav-link {
-    justify-content: center;
-    padding: 15px 5px;
+    justify-content: flex-start; /* Menu items align කිරීම */
+    padding: 10px;
   }
+
   #sidebar .menu-icon {
-    margin-right: 0;
-    font-size: 18px;
+    margin-right: 10px;
+    font-size: 16px;
   }
+
   #sidebar .quick-links {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
   }
+
   #sidebar .quick-link-btn {
-    margin-bottom: 10px;
-  }
-  .sidebar-toggle-button {
-    right: 10px;
+    margin-bottom: 0;
   }
 }
 
-/* Sidebar Toggle Button */
+/* === Sidebar Toggle === */
 .sidebar-toggle-button {
-  width: 30px; height: 30px;
-  background: #f5f5f5;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  position: absolute;
-  top: 20px; right: -15px;
+  background: none;
+  border: none;
   cursor: pointer;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  z-index: 10;
+  font-size: 20px;
+  color: #333;
+  margin-left: auto;
+  transition: transform 0.3s;
+  display: none !important; /* Default ලෙස සැඟවීම */
 }
 
-/* Hide toggle button everywhere */
-.sidebar-toggle-button {
-  display: none !important;
+.sidebar-toggle-button:hover {
+  color: #0d6efd;
+  transform: scale(1.1);
+}
+
+#sidebar.collapsed .sidebar-toggle-button.desktop-toggle {
+  transform: rotate(180deg);
 }

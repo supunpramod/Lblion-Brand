@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import './sidebar.css';
-import { FaHome, FaUser, FaChartLine, FaExchangeAlt, FaWallet, FaUsers, FaFileInvoiceDollar, FaHeadset, FaGraduationCap, FaHeart, FaCalendarAlt, FaEnvelope, FaQuestionCircle, } from 'react-icons/fa';
+import { FaHome, FaUser, FaChartLine, FaExchangeAlt, FaWallet, FaUsers, FaFileInvoiceDollar, FaHeadset, FaGraduationCap, FaHeart, FaCalendarAlt, FaEnvelope, FaQuestionCircle } from 'react-icons/fa';
 import { IoMdSettings } from "react-icons/io";
 import { PiNotepadFill } from "react-icons/pi";
 import logo from './lb-logo.avif';
-import dapulogo from './dapu-logo.jpg'; // ඔබගේ "LB" ලාංඡනය මෙහි path එකට දමන්න
+import dapulogo from './dapu-logo.jpg';
 import { Link } from 'react-router-dom';
-
-
-
 
 // PopUp Component එක
 const PopUp = ({ show, onClose, children }) => {
@@ -27,7 +24,7 @@ const PopUp = ({ show, onClose, children }) => {
 const Sidebar = () => {
   const [openMenu, setOpenMenu] = useState(null);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  // Popup එක පෙන්වන්නේ page එක load වෙද්දී
+  const [sidebarActive, setSidebarActive] = useState(false); // Mobile view එකේ sidebar toggle කිරීමට
   const [showPopup, setShowPopup] = useState(true);
 
   const toggleSubmenu = (menuId) => {
@@ -38,49 +35,57 @@ const Sidebar = () => {
     setSidebarCollapsed(!sidebarCollapsed);
   };
 
+  const toggleSidebarMobile = () => {
+    setSidebarActive(!sidebarActive); // Mobile view එකේ sidebar toggle කිරීම
+  };
+
   return (
     <>
       <PopUp show={showPopup} onClose={() => setShowPopup(false)}>
-  <div
-    style={{
-      background: 'linear-gradient(to right,rgb(43, 48, 42),rgb(160, 157, 146))',
-      borderRadius: 0,
-      padding: 20,
-      display: 'flex',
-      alignItems: 'center',
-      flexDirection: 'column',
-      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-      maxWidth: 300,
-      margin: 'auto'
-    }}
-  >
-    <img
-      src={dapulogo}
-      alt="LB Logo"
-      style={{
-        width: 100,
-        height: 100,
-        marginBottom: 16,
-        borderRadius: '50%',
-        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)'
-      }}
-    />
-    <div
-      style={{
-        color: 'yellow',
-        fontSize: 24,
-        fontWeight: 700,
-        textAlign: 'center'
-      }}
-    >
-      Coming Soon
-    </div>
-  </div>
-</PopUp>
+        <div
+          style={{
+            background: 'linear-gradient(to right,rgb(43, 48, 42),rgb(160, 157, 146))',
+            borderRadius: 0,
+            padding: 20,
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'column',
+            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+            maxWidth: 300,
+            margin: 'auto'
+          }}
+        >
+          <img
+            src={dapulogo}
+            alt="LB Logo"
+            style={{
+              width: 100,
+              height: 100,
+              marginBottom: 16,
+              borderRadius: '50%',
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)'
+            }}
+          />
+          <div
+            style={{
+              color: 'yellow',
+              fontSize: 24,
+              fontWeight: 700,
+              textAlign: 'center'
+            }}
+          >
+            Coming Soon
+          </div>
+        </div>
+      </PopUp>
 
+      {/* Sidebar Toggle Button for Mobile */}
+      <button className="sidebar-toggle-button" onClick={toggleSidebarMobile}>
+        {sidebarActive ? '✖' : '☰'} {/* Toggle icon එක වෙනස් වෙනවා */}
+      </button>
 
       {/* Sidebar */}
-      <nav id="sidebar" className={sidebarCollapsed ? 'collapsed' : ''}>
+      <nav id="sidebar" className={`${sidebarCollapsed ? 'collapsed' : ''} ${sidebarActive ? 'active' : ''}`}>
         <div className="sidebar-header">
           <div className="brand-logo">
             <div>
@@ -127,7 +132,7 @@ const Sidebar = () => {
               </button>
               {openMenu === 'investment' && (
                 <ul className="submenu">
-                  <li><Link to="/Deposit" ><button className="nav-link">Deposit</button></Link></li>
+                  <li><Link to="/Deposit"><button className="nav-link">Deposit</button></Link></li>
                   <li><button className="nav-link">My Asset Details</button></li>
                   <li><Link to="/PurchaseHistory"><button className="nav-link">Purchase History</button></Link></li>
                 </ul>
@@ -157,7 +162,7 @@ const Sidebar = () => {
             <li>
               <button className="nav-link">
                 <FaUsers className="menu-icon" />
-               <Link to="/ReferralLevel" ><span className="menu-text">Referral System</span></Link>
+                <Link to="/ReferralLevel"><span className="menu-text">Referral System</span></Link>
               </button>
             </li>
             <li>
@@ -175,32 +180,21 @@ const Sidebar = () => {
                 </ul>
               )}
             </li>
-
-
-
-
-
-
-
-
             <li>
               <button 
                 className="nav-link dropdown-toggle" 
-                onClick={() => toggleSubmenu('income')}
+                onClick={() => toggleSubmenu('summary')}
               >
-                <PiNotepadFill  className="menu-icon" />
+                <PiNotepadFill className="menu-icon" />
                 <span className="menu-text">Summary</span>
               </button>
-              {openMenu === 'income' && (
+              {openMenu === 'summary' && (
                 <ul className="submenu">
-                  <Link to= "/MyRank"><li><button className="nav-link">My Rank </button></li></Link>
+                  <Link to="/MyRank"><li><button className="nav-link">My Rank</button></li></Link>
                   <Link to="/MyCalendar"><li><button className="nav-link">My Calendar</button></li></Link>
                 </ul>
               )}
             </li>
-
-
-
             <li>
               <button className="nav-link">
                 <FaHeadset className="menu-icon" />
@@ -240,7 +234,7 @@ const Sidebar = () => {
           </div>
         </div>
         
-        <div className="sidebar-toggle-button" onClick={toggleSidebar}>
+        <div className="sidebar-toggle-button desktop-toggle" onClick={toggleSidebar}>
           <div className="toggle-icon"></div>
         </div>
       </nav>
