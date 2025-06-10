@@ -173,3 +173,69 @@
 }
 
 
+
+
+
+
+
+/* dashboard eken gatta ewa */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  
+  
+}
+
+.icon-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding-top: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+
+.icon-button:hover {
+  background: rgba(37, 117, 252, 0.1);
+  transform: scale(1.1);
+  color: #2575fc;
+}
+
+.icon-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.icon-button.user-icon {
+  font-size: 24px;
+  background: rgba(37, 117, 252, 0.05);
+}
+
+.dark-mode .icon-button {
+  color: #e4e6eb;
+  background: transparent;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .icon-button:hover {
+  background: rgba(106, 17, 203, 0.2);
+  color: #6a11cb;
+}
+
+.dark-mode .icon-button:active {
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .icon-button.user-icon {
+  background: rgba(106, 17, 203, 0.1);
+}
+
+

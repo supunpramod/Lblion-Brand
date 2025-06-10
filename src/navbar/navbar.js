@@ -19,6 +19,7 @@ const navItems = [
   { path: '/CustomerSupport', label: 'Support Ticket' },
 ];
 
+
 const Navbar = ({ isDarkMode, toggleTheme }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
