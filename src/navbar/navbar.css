@@ -1,212 +1,102 @@
-/* General reset for consistency */
+/* ========== Reset ========== */
 * {
   margin: 0;
   padding: 0;
-  box-sizing:calc();
+  box-sizing: border-box;
 }
 
+/* ========== Top Navigation ========== */
 .top-navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem; /* Increased padding for better spacing */
+  padding: 1rem 2rem;
   background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer, deeper shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   position: relative;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; /* Modern font stack */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .top-navigation.dark {
-  background-color: #121212; /* Darker, more modern dark mode */
-  color: #e0e0e0; /* Softer white for text */
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
+/* ========== Navigation Tabs ========== */
 .nav-tabs {
   display: flex;
-  gap: 1.5rem; /* Slightly larger gap for better separation */
-  background-color: transparent; /* Remove background for cleaner look */
+  gap: 1.5rem;
+  background-color: transparent;
   border-radius: 12px;
   padding: 0.5rem;
 }
 
 .nav-tab {
-  padding: 0.75rem 1.5rem; /* More padding for comfort */
+  padding: 0.75rem 1.5rem;
   text-decoration: none;
-  color: #333333; /* Darker text for better contrast */
-  border-radius: 8px; /* Softer corners */
-  transition: all 0.3s ease; /* Smooth all transitions */
-  font-weight: 500; /* Medium weight for better readability */
-  background-color: #f1f3f5; /* Light neutral background */
+  color: #333333;
+  border-radius: 8px;
+  font-weight: 500;
+  background-color: #f1f3f5;
+  transition: all 0.3s ease;
 }
 
 .nav-tab:hover {
-  background-color: #e0e7ff; /* Subtle hover color */
-  transform: translateY(-2px); /* Slight lift effect */
-}
-
-.dark .nav-tab {
-  color: #e0e0e0;
-  background-color: #2a2a2a; /* Darker tab background */
-}
-
-.dark .nav-tab:hover {
-  background-color: #3b82f6; /* Vibrant blue for hover */
+  background-color: #e0e7ff;
   transform: translateY(-2px);
 }
 
 .nav-tab.active {
-  background-color: #2563eb; /* Bold blue for active state */
+  background-color: #2563eb;
   color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode Tabs */
+.dark .nav-tab {
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dark .nav-tab:hover {
+  background-color: #3b82f6;
+  transform: translateY(-2px);
 }
 
 .dark .nav-tab.active {
-  background-color: #60a5fa; /* Lighter blue for dark mode */
+  background-color: #60a5fa;
 }
 
+/* ========== Action Buttons ========== */
 .action-buttons {
   display: flex;
-  gap: 1.5rem; /* More spacing for buttons */
+  gap: 1.5rem;
   align-items: center;
-}
-
-.icon-button {
-  background: none;
-  border: none;
-  font-size: 1.4rem; /* Slightly larger icons */
-  cursor: pointer;
-  color: inherit;
-  padding: 0.75rem; /* Larger touch area */
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.icon-button:hover {
-  background-color: rgba(0, 0, 0, 0.1); /* Subtle hover effect */
-  transform: scale(1.1); /* Slight scale for feedback */
-}
-
-.dark .icon-button:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.user-icon {
-  font-size: 1.8rem; /* Larger user icon for prominence */
-}
-
-.hamburger-btn {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.8rem; /* Larger hamburger icon */
-  cursor: pointer;
-  color: inherit;
-  padding: 0.75rem;
-  transition: all 0.3s ease;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-  .top-navigation {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem 1.5rem;
-  }
-  
-  .nav-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nav-tabs {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-    opacity: 0;
-    transform: translateY(-10px); /* Slide-in effect */
-    transition: all 0.3s ease;
-  }
-  
-  .nav-tabs.mobile-active {
-    display: flex;
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .action-buttons {
-    display: none;
-  }
-  
-  .hamburger-btn {
-    display: block;
-  }
-  
-  .nav-tab {
-    padding: 1rem 1.5rem;
-    text-align: left;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    font-size: 1.1rem; /* Larger text for mobile */
-  }
-  
-  .dark .nav-tab {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  }
-}
-
-/* Desktop styles */
-@media (min-width: 769px) {
-  .hamburger-btn {
-    display: none;
-  }
-  
-  .nav-tabs {
-    display: flex;
-  }
-  
-  .action-buttons {
-    display: flex;
-  }
-}
-
-
-
-
-
-
-
-/* dashboard eken gatta ewa */
-.action-buttons {
-  display: flex;
-  gap: 10px;
-  
-  
 }
 
 .icon-button {
   background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 20px;
-  padding-top: 10px;
+  font-size: 1.4rem;
+  padding: 0.75rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #333;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 40px;
   height: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .icon-button:hover {
   background: rgba(37, 117, 252, 0.1);
-  transform: scale(1.1);
   color: #2575fc;
+  transform: scale(1.1);
 }
 
 .icon-button:active {
@@ -215,27 +105,109 @@
 }
 
 .icon-button.user-icon {
-  font-size: 24px;
+  font-size: 1.8rem;
   background: rgba(37, 117, 252, 0.05);
 }
 
-.dark-mode .icon-button {
+/* Dark Mode Icon Buttons */
+.dark .icon-button {
   color: #e4e6eb;
   background: transparent;
   box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
-.dark-mode .icon-button:hover {
+.dark .icon-button:hover {
   background: rgba(106, 17, 203, 0.2);
   color: #6a11cb;
 }
 
-.dark-mode .icon-button:active {
+.dark .icon-button:active {
   box-shadow: 0 1px 3px rgba(255, 255, 255, 0.05);
 }
 
-.dark-mode .icon-button.user-icon {
+.dark .icon-button.user-icon {
   background: rgba(106, 17, 203, 0.1);
 }
 
+/* ========== Hamburger Button ========== */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+}
 
+/* ========== Mobile Styles ========== */
+@media (max-width: 768px) {
+  .top-navigation {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-tabs {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .nav-tabs.mobile-active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-tab {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+  }
+
+  .dark .nav-tab {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    order: -1;
+    margin-bottom: 0.5rem;
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+}
+
+/* ========== Desktop Styles ========== */
+@media (min-width: 769px) {
+  .hamburger-btn {
+    display: none;
+  }
+
+  .nav-tabs {
+    display: flex;
+  }
+
+  .action-buttons {
+    width: auto;
+  }
+}

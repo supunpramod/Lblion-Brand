@@ -19,7 +19,6 @@ const navItems = [
   { path: '/CustomerSupport', label: 'Support Ticket' },
 ];
 
-
 const Navbar = ({ isDarkMode, toggleTheme }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -61,13 +60,34 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
   return (
     <header className={`top-navigation ${isDarkMode ? 'dark' : 'light'}`}>
       <div className="nav-header">
-        <button 
+        <button
           className="hamburger-btn"
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
           <FaBars />
         </button>
+        <div className="action-buttons">
+          <button
+            className="icon-button"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
+          >
+            {isDarkMode ? <FaSun /> : <FaMoon />}
+          </button>
+          <button className="icon-button" aria-label="Dashboard grid">
+            <FaThLarge />
+          </button>
+          <button className="icon-button" aria-label="Language options">
+            <FaLanguage />
+          </button>
+          <button className="icon-button" aria-label="Notifications">
+            <FaBell />
+          </button>
+          <button className="icon-button user-icon" aria-label="User profile">
+            <FaUserCircle />
+          </button>
+        </div>
       </div>
 
       <nav
@@ -88,28 +108,6 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
           </Link>
         ))}
       </nav>
-
-      <div className="action-buttons">
-        <button
-          className="icon-button"
-          onClick={toggleTheme}
-          aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
-        >
-          {isDarkMode ? <FaSun /> : <FaMoon />}
-        </button>
-        <button className="icon-button" aria-label="Dashboard grid">
-          <FaThLarge />
-        </button>
-        <button className="icon-button" aria-label="Language options">
-          <FaLanguage />
-        </button>
-        <button className="icon-button" aria-label="Notifications">
-          <FaBell />
-        </button>
-        <button className="icon-button user-icon" aria-label="User profile">
-          <FaUserCircle />
-        </button>
-      </div>
     </header>
   );
 };
