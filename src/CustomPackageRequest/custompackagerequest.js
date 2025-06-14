@@ -10,7 +10,8 @@ const CustomPackageRequest = () => {
   const location = useLocation();
   const { amount = 30, gasFee = 0.9, total = 30.9 } = location.state || {};
 
-  const walletAddress = 'TBx1HzKge2uFHte63qHcrmtEWZ1BJcMroq';
+  const walletAddress1 = 'TBx1HzKge2uFHte63qHcrmtEWZ1BJcMroq';
+  const walletAddress2='0x967e0f8ae143d9eb9ffbcba450d55b659fc00006';
 
   const handleFileChange = (e) => {
     setPaymentSlip(e.target.files[0]);
@@ -93,7 +94,7 @@ const CustomPackageRequest = () => {
         >
           Binance Wallet
         </p>
-        <QRCodeCanvas value={walletAddress} size={128} />
+        <QRCodeCanvas value={walletAddress1} size={128} />
         <div
           style={{
             marginTop: '1rem',
@@ -104,7 +105,21 @@ const CustomPackageRequest = () => {
             fontFamily: 'monospace',
           }}
         >
-          {walletAddress}
+          
+          {walletAddress1}
+        </div>
+
+        <div
+          style={{
+            marginTop: '1rem',
+            background: '#1a2d4f',
+            padding: '0.75rem',
+            borderRadius: '6px',
+            wordBreak: 'break-all',
+            fontFamily: 'monospace',
+          }}
+        >
+          {walletAddress2}
         </div>
         <div style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: '#ccc' }}>
           Total Amount: {total.toFixed(2)} USDT<br />

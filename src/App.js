@@ -33,7 +33,7 @@ function App() {
     <Route path="/KycDashboard" element={<KycDashboard/>} />
     <Route path="/Deposit" element={<Deposit />} />
     <Route path="/Deposit/custompackagerequest" element={<CustomPackageRequest />} />
-    <Route path="/PurchaseHistory" element={<PurchaseHistory />} />
+    <Route path="/PurchaseHistory/*" element={<PurchaseHistory />} />
     <Route path="/ReferralLevel" element={<ReferralLevel />} />
     <Route path="/CustomerSupport" element={<CustomerSupport />} />
     <Route path="/Tutorial" element={<Tutorial />} />
