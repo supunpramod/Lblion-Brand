@@ -95,9 +95,21 @@ const CustomPackageRequest = () => {
           Binance Wallet
         </p>
         <QRCodeCanvas value={walletAddress1} size={128} />
+
+
+         <p
+          style={{
+            
+            marginTop: '0.7rem',
+            fontWeight: 'bold',
+            fontSize: '1.1rem',
+          }}
+        >
+          TRC20
+        </p>
         <div
           style={{
-            marginTop: '1rem',
+            marginTop: '0.5rem',
             background: '#1a2d4f',
             padding: '0.75rem',
             borderRadius: '6px',
@@ -109,9 +121,20 @@ const CustomPackageRequest = () => {
           {walletAddress1}
         </div>
 
+        <p
+          style={{
+            
+            marginTop: '0.7rem',
+            fontWeight: 'bold',
+            fontSize: '1.1rem',
+          }}
+        >
+          BEP20
+        </p>
+
         <div
           style={{
-            marginTop: '1rem',
+            marginTop: '0.5rem',
             background: '#1a2d4f',
             padding: '0.75rem',
             borderRadius: '6px',
