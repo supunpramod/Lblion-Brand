@@ -134,7 +134,6 @@ export default function RegisterPage() {
           <div className="logo-section">
             <img src={logo} alt="lblion brand" className="logo" />
             <h1 className="brand-title">Lblion Brand</h1>
-            <p className="brand-tagline">EASY WAY TO BIG GOALS</p>
           </div>
           <div className="form-row">
             <div className="form-group">

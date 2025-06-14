@@ -1,126 +1,126 @@
-
 .register-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 16px;
-    background-color:transparent;
-    min-height: 100vh;
-    overflow: hidden;
-    
-  }
-  
-  .register-form {
-    max-width: 800px;
-    width: 100%;
-    background:white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      z-index: 1;
-      overflow: hidden;
-  opacity: 95%; 
-  }
-  
-  .logo-section {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .logo {
-    height: 60px;
-    margin-bottom: 10px;
-    border-radius: 50%;
-  }
-  
-  .brand-title {
-    font-size: 28px;
-    font-weight: 700;
-    color: #000;
-    margin: 0;
-  }
-  
-  .brand-tagline {
-    font-size: 14px;
-    color: #555;
-    margin-top: 4px;
-  }
-  
-  .form-row {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 16px;
-  }
-  
-  .form-group {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-group label {
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #3f3838;
-  }
-  
-  input,
-  select {
-    padding: 10px 14px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 15px;
-  }
-  
-  select {
-    background-color: white;
-  }
-  
-  .password-info {
-    font-size: 13px;
-    color: #666;
-    margin-bottom: 16px;
-    margin-top: -10px;
-  }
-  
-  .form-check {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    font-size: 14px;
-  }
-  
-  .form-check input[type="checkbox"] {
-    transform: scale(1.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 16px;
+  background-color: transparent;
+  min-height: 100vh;
+  overflow: hidden;
+}
 
-  }
-  
-  .form-check a {
-    color: #676272;
-    text-decoration: underline;
-  }
-  
-  .submit-button {
-    width: 100%;
-    padding: 0.5rem;
-    background: linear-gradient(to right, #ec4899, #facc15); 
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .submit-button:hover {
-    background: #553c9a;
-  }
-  
-  .otp{
-   
-    max-height: 100vh;
-  }
+.register-form {
+  max-width: 800px;
+  width: 100%;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  overflow: hidden;
+  opacity: 95%;
+}
+
+.logo-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  height: 60px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.brand-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.brand-tagline {
+  font-size: 14px;
+  color: #555;
+  margin-top: 4px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #3f3838;
+}
+
+input,
+select {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  width: 100%;
+}
+
+select {
+  background-color: white;
+}
+
+.password-info {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 16px;
+  margin-top: -10px;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #6c53af;
+}
+
+.form-check input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+.form-check a {
+  color: #676272;
+  text-decoration: underline;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.5rem;
+  background: linear-gradient(to right, #ec4899, #facc15);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background: #553c9a;
+}
+
+.otp {
+  max-height: 100vh;
+}
 
 .register-form p {
   margin-top: 1.5em;
@@ -139,14 +139,6 @@
   color: #f857a6;
   text-decoration: underline;
 }
-
-.form-check{
-  text-align: left;
-  display: block;
-  color: #6c53af;
-
-}
-
 
 .form-check-label {
   font-family: 'Inter', sans-serif;
@@ -171,9 +163,53 @@
   text-decoration: underline;
 }
 
+/* 🌐 Responsive Design */
+@media (max-width: 768px) {
+  .register-form {
+    padding: 24px;
+  }
 
+  .brand-title {
+    font-size: 22px;
+  }
 
-  
+  .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
 
-  
+  .form-group {
+    min-width: 100%;
+  }
 
+  .submit-button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    padding: 20px 12px;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  .brand-title {
+    font-size: 20px;
+  }
+
+  .brand-tagline {
+    font-size: 12px;
+  }
+
+  .submit-button {
+    padding: 0.6rem;
+    font-size: 15px;
+  }
+
+  .form-check {
+    font-size: 13px;
+  }
+}
