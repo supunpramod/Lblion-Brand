@@ -49,7 +49,7 @@ body {
 
 .highlighted {
   color: #fff;
-  background: #0042ff;
+  background: green;
   border-radius: 10px;
   padding: 0.4rem 0.6rem;
   display: inline-block;
@@ -79,7 +79,7 @@ body {
 }
 
 .investment-box {
-  background-color: #718de2;
+  background-color: green;
   margin-top: 1rem;
   padding: 2rem;
   border-radius: 15px;
@@ -110,7 +110,7 @@ body {
 
 .deposit-btn {
   margin-top: 1.2rem;
-  background: #0042ff;
+  background: green;
   color: white;
   border: none;
   padding: 0.6rem 2rem;
@@ -200,7 +200,7 @@ body {
 }
 
 .manual-pay-btn:hover {
-  background-color: #2449a1;
+  background-color: green;
 }
 
 /* ✅ Mobile Responsive Styles */

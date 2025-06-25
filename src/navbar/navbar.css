@@ -48,7 +48,7 @@
 }
 
 .nav-tab.active {
-  background-color: #2563eb;
+  background-color: green;
   color: #ffffff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
@@ -61,12 +61,12 @@
 }
 
 .dark .nav-tab:hover {
-  background-color: #3b82f6;
+  background-color: green;
   transform: translateY(-2px);
 }
 
 .dark .nav-tab.active {
-  background-color: #60a5fa;
+  background-color: green;
 }
 
 /* ========== Action Buttons ========== */
@@ -95,7 +95,7 @@
 
 .icon-button:hover {
   background: rgba(37, 117, 252, 0.1);
-  color: #2575fc;
+  color: green;
   transform: scale(1.1);
 }
 
@@ -118,7 +118,7 @@
 
 .dark .icon-button:hover {
   background: rgba(106, 17, 203, 0.2);
-  color: #6a11cb;
+  color: green;
 }
 
 .dark .icon-button:active {
