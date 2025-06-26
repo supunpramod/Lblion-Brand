@@ -120,7 +120,7 @@
 
 /* Wallet Card */
 .wallet-card {
-  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  background: linear-gradient(135deg, green 0%, #2575fc 100%);
   padding: 20px;
   border-radius: 10px;
   color: #fff;
@@ -271,7 +271,7 @@
 
 .copy-button,
 .invite-button {
-  background: #2575fc;
+  background: green;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -298,7 +298,7 @@
 
 .send-icon {
   font-size: 24px;
-  color: #2575fc;
+  color: green;
 }
 
 /* ====== Bottom Tabs ====== */
@@ -365,7 +365,7 @@
 
 .dark-mode .copy-button,
 .dark-mode .invite-button {
-  background: #6a11cb;
+  background: green;
 }
 
 /* ====== Responsive Design ====== */

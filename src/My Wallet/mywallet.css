@@ -55,7 +55,7 @@
 }
 
 .wallet-card {
-    background-color: #111c3a;
+    background-color: green;
     border-radius: 10px; /* Smaller radius */
     padding: 15px; /* Reduced padding */
     flex: 1 1 100%; /* Full width on mobile */

@@ -53,7 +53,7 @@ body {
   
   .highlighted {
     color: #fff;
-    background: #0042ff;
+    background: green;
     border-radius: 10px;
     padding: 0.4rem 0.6rem;
     display: inline-block;

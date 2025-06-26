@@ -19,7 +19,7 @@ body {
   }
   
   .ticket-card {
-    background-color: #05153c;
+    background-color: green;
     border-radius: 15px;
     padding: 20px;
     width: 100%;
@@ -37,7 +37,7 @@ body {
   .add-ticket {
     background-color: transparent;
     color: #3f7bfc;
-    border: 1px solid #3f7bfc;
+    border: 1px solid green;
     padding: 8px 14px;
     border-radius: 8px;
     cursor: pointer;

@@ -17,8 +17,8 @@ body {
   }
   
   .rank-card {
-    background-color: #311c1c;
-    border: 1px solid #e87527;
+    background-color: black;
+    
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 25px;
@@ -30,7 +30,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #ff6c1a;
+    background-color: green;
     padding: 5px 12px;
     border-bottom-right-radius: 10px;
     color: white;
@@ -45,7 +45,7 @@ body {
   }
   
   .requirement {
-    background-color: #5d3d31;
+    background-color: white;
     padding: 10px;
     margin: 15px 0;
     border-radius: 10px;
@@ -54,7 +54,7 @@ body {
   }
   
   .benefits-section {
-    background-color: #472e2e;
+    background-color: green;
     padding: 15px;
     border-radius: 10px;
     position: relative;
@@ -76,7 +76,7 @@ body {
     right: 20px;
     top: 20px;
     font-size: 40px;
-    color: #ff9933;
+    color: green;
     opacity: 0.3;
   }
   

@@ -80,7 +80,7 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background-color: #4A6FA5; /* Keep original blue */
+  background-color: green; /* Keep original blue */
   color: #FFFFFF; /* White text for avatar */
   display: flex;
   align-items: center;
@@ -91,7 +91,7 @@
 
 .photo-upload-btn {
   padding: 10px 20px;
-  background-color: #4A6FA5; /* Keep original blue */
+  background-color: green; /* Keep original blue */
   color: #FFFFFF; /* White text */
   border: none;
   border-radius: 5px;

@@ -81,7 +81,7 @@ body {
 .investment-box {
   background-color: green;
   margin-top: 1rem;
-  padding: 2rem;
+  padding: 5rem;
   border-radius: 15px;
   text-align: center;
 }
@@ -96,6 +96,7 @@ body {
   color: #fff;
   font-size: 1rem;
   text-align: center;
+  
 }
 
 .total-amount {
@@ -110,7 +111,7 @@ body {
 
 .deposit-btn {
   margin-top: 1.2rem;
-  background: green;
+  background: blue;
   color: white;
   border: none;
   padding: 0.6rem 2rem;
@@ -128,12 +129,13 @@ body {
 }
 
 .info-card {
-  background: #6a72e0;
+  background: green;
   padding: 2rem;
   border-radius: 15px;
   text-align: center;
   width: 180px;
-  margin: 1rem;
+  margin: 2rem;
+  color: white;
 }
 
 .modal-overlay {
@@ -188,7 +190,7 @@ body {
 }
 
 .manual-pay-btn {
-  background-color: #1d2f6f;
+  background-color: green;
   color: white;
   padding: 12px 24px;
   margin-top: 20px;
